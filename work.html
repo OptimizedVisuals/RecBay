@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Explore RecBay's films, photography, motion design, and post-production work.">
+  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var key = 'recbay-theme';
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch (e) {}
+      var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored === 'light' || stored === 'dark' ? stored : (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+      var meta = document.getElementById('theme-color-meta');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+    }());
+  </script>
+  <title>Work | RecBay</title>
+  <link rel="icon" href="assets/images/recbay-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/images/projects/object-of-desire-card.webp" as="image" fetchpriority="high">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span class="theme-toggle__icon" aria-hidden="true">
+          <svg class="theme-toggle__sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="theme-toggle__moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </span>
+      </button>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="contact.html">Start a project</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="project-lineup" aria-labelledby="lineup-title">
+      <div class="container">
+        <div class="lineup-head">
+          <h1 class="eyebrow" id="lineup-title">Selected work</h1>
+          <p class="lineup-count">05 projects <span aria-hidden="true">/</span> 2024&ndash;2026</p>
+        </div>
+        <div class="lineup-stage" aria-hidden="true">
+          <div class="lineup-card lineup-card--outer-left">
+            <img src="assets/images/projects/color-reconsidered-card.webp" alt="" width="1408" height="768" loading="eager" decoding="async">
+            <span class="lineup-card__tag">04</span>
+          </div>
+          <div class="lineup-card lineup-card--inner-left">
+            <img src="assets/images/projects/in-their-element-card.webp" alt="" width="1408" height="768" loading="eager" decoding="async">
+            <span class="lineup-card__tag">02</span>
+          </div>
+          <div class="lineup-card lineup-card--center">
+            <img src="assets/images/projects/object-of-desire-card.webp" alt="" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high">
+            <span class="lineup-card__tag">01 / Object of Desire</span>
+          </div>
+          <div class="lineup-card lineup-card--inner-right">
+            <img src="assets/images/projects/after-hours-card.webp" alt="" width="1920" height="1080" loading="eager" decoding="async">
+            <span class="lineup-card__tag">03</span>
+          </div>
+          <div class="lineup-card lineup-card--outer-right">
+            <img src="assets/images/projects/form-in-flux-card.webp" alt="" width="1408" height="768" loading="eager" decoding="async">
+            <span class="lineup-card__tag">05</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-work" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2 id="projects-title">All work.</h2>
+          </div>
+          <p class="section-note">Five projects across film, photography, motion, and color — each carried from first frame to final cut.</p>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter projects">
+          <button class="filter-button active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" data-filter="film" aria-pressed="false">Film</button>
+          <button class="filter-button" data-filter="photo" aria-pressed="false">Photography</button>
+          <button class="filter-button" data-filter="motion" aria-pressed="false">Motion</button>
+          <button class="filter-button" data-filter="grade" aria-pressed="false">Grade</button>
+        </div>
+        <div class="project-grid work-grid">
+          <a class="project-card" data-category="film" href="project-product-film.html">
+            <div class="project-art art-product"><img src="assets/images/projects/object-of-desire-card.webp" alt="Object of Desire — product film still" class="project-image" loading="lazy" decoding="async" width="1920" height="1080"></div>
+            <div class="project-meta"><div><h3>Object of Desire</h3><p>01 · Product film</p></div></div>
+          </a>
+          <a class="project-card" data-category="photo" href="project-editorial.html">
+            <div class="project-art art-editorial"><img src="assets/images/projects/in-their-element-card.webp" alt="In Their Element — environmental portrait still" class="project-image" loading="lazy" decoding="async" width="1408" height="768"></div>
+            <div class="project-meta"><div><h3>In Their Element</h3><p>02 · Photography</p></div></div>
+          </a>
+          <a class="project-card" data-category="film" href="project-short-film.html">
+            <div class="project-art art-film"><img src="assets/images/projects/after-hours-card.webp" alt="After Hours — night film still" class="project-image" loading="lazy" decoding="async" width="1920" height="1080"></div>
+            <div class="project-meta"><div><h3>After Hours</h3><p>03 · Short film</p></div></div>
+          </a>
+          <a class="project-card" data-category="grade" href="project-color-study.html">
+            <div class="project-art art-grade"><img src="assets/images/projects/color-reconsidered-card.webp" alt="Color, Reconsidered — graded still" class="project-image" loading="lazy" decoding="async" width="1408" height="768"></div>
+            <div class="project-meta"><div><h3>Color, Reconsidered</h3><p>04 · Color grading</p></div></div>
+          </a>
+          <a class="project-card" data-category="motion" href="project-motion-ident.html">
+            <div class="project-art art-motion"><img src="assets/images/projects/form-in-flux-card.webp" alt="Form in Flux — motion design styleframe" class="project-image" loading="lazy" decoding="async" width="1408" height="768"></div>
+            <div class="project-meta"><div><h3>Form in Flux</h3><p>05 · Motion design</p></div></div>
+          </a>
+        </div>
+        <section class="section">
+          <div class="container">
+            <div class="section-heading" style="margin-bottom:40px">
+              <div>
+                <p class="eyebrow">Showreel</p>
+                <h2>See the work in motion.</h2>
+              </div>
+            </div>
+            <figure class="reel" data-reel>
+              <div class="reel__poster" data-reel-poster>
+                <img src="assets/videos/showreel-poster.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+                <p class="reel__label">Showreel — 2026</p>
+                <p class="reel__status">Watch now</p>
+                <button class="reel__play" type="button" data-reel-play aria-label="Play the showreel">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="5,3 19,12 5,21" fill="currentColor"></polygon></svg>
+                </button>
+              </div>
+              <video class="reel__video" data-reel-video controls playsinline preload="none" poster="assets/videos/showreel-poster.webp" hidden>
+                <source src="assets/videos/showreel.webm" type="video/webm">
+                <source src="assets/videos/showreel.mp4" type="video/mp4">
+                Your browser does not support the video element.
+              </video>
+              <figcaption>
+                <span>Showreel · 0:15 · Silent cut</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="contact-banner">
+      <div class="container contact-banner-inner">
+        <p class="eyebrow">Your idea, next</p>
+        <h2>Let's build the next frame.</h2>
+        <a class="button button-lime" href="contact.html">Start a project</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top"><a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a><p>Visuals made with intention.</p><a class="button button-solid" href="contact.html">Let's talk</a></div>
+    <div class="container footer-bottom"><span>© <span data-year></span> RecBay. All rights reserved.</span><span>Independent creative production</span><a href="mailto:annchristine894@gmail.com">annchristine894@gmail.com</a></div>
+  </footer>
+</body>
+</html>

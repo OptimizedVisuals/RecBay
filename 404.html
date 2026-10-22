@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="This page couldn't be found. Return to RecBay's homepage or explore the work.">
+  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var key = 'recbay-theme';
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch (e) {}
+      var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored === 'light' || stored === 'dark' ? stored : (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+      var meta = document.getElementById('theme-color-meta');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+    }());
+  </script>
+  <title>Page not found | RecBay</title>
+  <link rel="icon" href="assets/images/recbay-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span class="theme-toggle__icon" aria-hidden="true">
+          <svg class="theme-toggle__sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="theme-toggle__moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </span>
+      </button>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="contact.html">Start a project</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">404</p>
+        <h1>This page does not exist.</h1>
+        <p class="page-intro">The page you're looking for has moved or was never created. Pick a working link below.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="center-action" style="margin-top:60px">
+          <a class="button button-lime" href="index.html">Return to homepage</a>
+          <a class="button button-outline" href="work.html">Explore the work</a>
+          <a class="button button-outline" href="contact.html">Start a project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top"><a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a><p>Visuals made with intention.</p><a class="button button-solid" href="contact.html">Let's talk</a></div>
+    <div class="container footer-bottom"><span>© <span data-year></span> RecBay. All rights reserved.</span><span>Independent creative production</span><a href="mailto:annchristine894@gmail.com">annchristine894@gmail.com</a></div>
+  </footer>
+</body>
+</html>

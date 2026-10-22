@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" aria-label="After Hours — short film concept placeholder">
+  <rect width="600" height="400" fill="#24211e"/>
+  <circle cx="390" cy="110" r="70" fill="#e2ad7a"/>
+  <path d="M290 320 L370 140 L450 400 L0 400 Z" fill="#141515"/>
+  <text x="300" y="340" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="900" letter-spacing=".08em" fill="#f5e5d3" text-anchor="middle">AFTER HOURS · CONCEPT</text>
+  <text x="300" y="370" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#a6a6a6" text-anchor="middle">Replace with real film still</text>
+</svg>

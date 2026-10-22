@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 600" aria-label="In Their Element — editorial photography concept placeholder">
+  <rect width="450" height="600" fill="#111"/>
+  <ellipse cx="225" cy="200" rx="110" ry="150" fill="#51463f"/>
+  <circle cx="225" cy="200" r="70" fill="#c59a7d"/>
+  <text x="225" y="500" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="900" letter-spacing=".1em" fill="#f0ede6" text-anchor="middle">IN THEIR ELEMENT · CONCEPT</text>
+  <text x="225" y="530" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#a6a6a6" text-anchor="middle">Replace with real photography</text>
+</svg>

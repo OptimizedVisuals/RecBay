@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" aria-label="Object of Desire — product film concept placeholder">
+  <rect width="600" height="450" fill="#0d0e0d"/>
+  <ellipse cx="380" cy="225" rx="140" ry="110" fill="#24231e"/>
+  <path d="M380 150c-30 0-55 12-55 28s25 28 55 28 55-12 55-28-25-28-55-28" fill="#d0c5a6"/>
+  <path d="M380 122l-25-8 25-8z" fill="#b5aa8b"/>
+  <text x="300" y="380" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="900" letter-spacing=".08em" fill="#f0ede6" text-anchor="middle">OBJECT OF DESIRE · CONCEPT</text>
+  <text x="300" y="410" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#a6a6a6" text-anchor="middle">Replace with real production still</text>
+</svg>

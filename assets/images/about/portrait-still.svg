@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" aria-label="RecBay team portrait placeholder">
+  <defs>
+    <linearGradient id="portGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121212"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#portGrad)"/>
+  <ellipse cx="800" cy="400" rx="160" ry="200" fill="#1a1a1a"/>
+  <circle cx="800" cy="340" r="100" fill="#0c0c0c"/>
+  <circle cx="750" cy="320" r="20" fill="#222"/>
+  <circle cx="850" cy="320" r="20" fill="#222"/>
+  <rect x="720" cy="380" width="160" height="60" fill="#141414"/>
+  <rect x="680" y="460" width="240" height="260" fill="#1a1a1a"/>
+  <rect x="700" y="620" width="200" height="20" fill="#222"/>
+  <rect x="700" y="650" width="200" height="20" fill="#222"/>
+  <text x="800" y="880" font-family="monospace" font-size="14" fill="#4a4a4a" text-anchor="middle">RECBAY TEAM PORTRAIT · PLACEHOLDER · REPLACE WITH REAL TEAM PHOTO</text>
+</svg>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Learn about RecBay's approach to visual production and post-production.">
+  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var key = 'recbay-theme';
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch (e) {}
+      var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored === 'light' || stored === 'dark' ? stored : (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+      var meta = document.getElementById('theme-color-meta');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+    }());
+  </script>
+  <title>About | RecBay</title>
+  <link rel="icon" href="assets/images/recbay-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/images/about/about-hero.webp" as="image" fetchpriority="high">
+  <script src="js/main.js" defer></script>
+</head>
+<body class="page-about">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span class="theme-toggle__icon" aria-hidden="true">
+          <svg class="theme-toggle__sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="theme-toggle__moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </span>
+      </button>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="about.html">About</a>
+        <a class="nav-cta" href="contact.html">Start a project</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="about-hero section-dark" id="about-hero">
+      <div class="container">
+        <div class="about-hero__meta">
+          <p class="about-hero__label">About</p>
+        </div>
+        <div class="about-hero__image">
+          <img class="about-hero__img" src="assets/images/about/about-hero.webp" alt="RecBay studio at work" width="1408" height="768" loading="eager" decoding="async" fetchpriority="high">
+          <div class="about-hero__overlay"></div>
+          <div class="about-hero__drift"></div>
+        </div>
+        <div class="about-hero__caption">
+          <div class="about-hero__hairline"></div>
+          <p class="about-hero__belief">We build films frame by frame.</p>
+          <p class="about-hero__fact">RecBay is a production team working across film, photography, and motion.</p>
+          <p class="about-hero__scroll">The team <span>↓</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-art">
+            <img src="assets/images/about/about-body.webp" alt="RecBay team at work in the studio" class="project-image" loading="lazy" decoding="async" width="1408" height="768">
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">Why RecBay</p>
+            <h2>We build films frame by frame.</h2>
+            <p>RecBay started from the idea that a production team should be as deliberate about the work as it is about the result. There is no house style here — only the style each idea calls for.</p>
+            <p>We work across film, photography, and motion because the idea should choose the medium, not the other way around. Whether it's a commercial, a brand film, an editorial series, or a color grade, the question is always the same: what does this idea need to become?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The team</p>
+            <h2>Who does the work.</h2>
+          </div>
+        </div>
+        <div class="principles-grid">
+          <article>
+            <span>01</span>
+            <h3>Founder & director</h3>
+            <p>Sets the creative direction and oversees every production from brief to final cut.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Editor & colorist</h3>
+            <p>Shapes the edit and grades the finish — the cut is where the argument is made.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Director of photography</h3>
+            <p>Lighting and capture — every frame is lit with intention before it's ever shot.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">How we work</p>
+            <h2>Process, not formula.</h2>
+          </div>
+        </div>
+        <div class="process-steps">
+          <div><span>01</span><h3>Understand</h3><p>We get clear on the idea, audience, and outcome before choosing the visuals.</p></div>
+          <div><span>02</span><h3>Make</h3><p>We shape the concept through thoughtful production and considered craft.</p></div>
+          <div><span>03</span><h3>Refine</h3><p>We edit, grade, and finish the work so every element feels connected.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-banner">
+      <div class="container contact-banner-inner">
+        <p class="eyebrow">Good ideas start somewhere</p>
+        <h2>Let's start a conversation.</h2>
+        <a class="button button-lime" href="contact.html">Contact RecBay</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top"><a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a><p>Visuals made with intention.</p><a class="button button-solid" href="contact.html">Let's talk</a></div>
+    <div class="container footer-bottom"><span>© <span data-year></span> RecBay. All rights reserved.</span><span>Independent creative production</span><a href="mailto:annchristine894@gmail.com">annchristine894@gmail.com</a></div>
+  </footer>
+</body>
+</html>

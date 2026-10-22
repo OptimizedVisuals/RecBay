@@ -1,0 +1,537 @@
+# RecBay Production Portfolio Website
+
+**Version:** 1.10.0  
+**Last updated:** 2026-10-22  
+**Status:** Home project-lineup pass - no hero, fanned desktop deck, stacked mobile deck
+
+## Table of Contents
+
+1. [Overview](#1-overview)
+2. [Project objectives](#2-project-objectives)
+3. [Technology stack](#3-technology-stack)
+4. [Website structure](#4-website-structure)
+5. [Services](#5-services)
+6. [Portfolio project concepts](#6-portfolio-project-concepts)
+7. [Brand direction](#7-brand-direction)
+8. [Concept labeling in the UI](#8-concept-labeling-in-the-ui)
+9. [Project detail pages and SEO](#9-project-detail-pages-and-seo)
+10. [Case-study template](#10-case-study-template)
+11. [Installation and local preview](#11-installation-and-local-preview)
+12. [Customization and placeholder inventory](#12-customization-and-placeholder-inventory)
+13. [Contact form](#13-contact-form)
+14. [Accessibility requirements](#14-accessibility-requirements)
+15. [Performance requirements](#15-performance-requirements)
+16. [SEO and metadata](#16-seo-and-metadata)
+17. [Privacy and legal](#17-privacy-and-legal)
+18. [QA/testing checklist](#18-qa-testing-checklist)
+19. [Known limitations](#19-known-limitations)
+20. [Current project status](#20-current-project-status)
+21. [Deployment checklist](#21-deployment-checklist)
+22. [License and usage](#22-license-and-usage)
+23. [Changelog](#23-changelog)
+
+## 1. Overview
+
+RecBay is a creative production team specializing in video editing, visual production, commercials and brand films, photography, motion graphics and visual effects (VFX), and color grading.
+
+This website serves as RecBay's digital portfolio, presenting its creative identity, showcasing selected projects, explaining its services, and providing a point of contact for potential clients and collaborators.
+
+The website uses a cream, black, and lime neo-brutalist design system: 3px borders, hard offset shadows, zero radius, Archivo Black display type, and Space Mono for body and metadata. The About page keeps a dark editorial interior as a deliberate contrast. A device-aware light/dark theme is available on every page, with the visitor's explicit choice stored locally.
+
+## 2. Project objectives
+
+The website is designed to:
+
+- Establish RecBay's online brand presence.
+- Showcase creative projects and production capabilities.
+- Communicate services to individual clients, businesses, brands, and creative collaborators.
+- Provide a dedicated space for project descriptions and visual presentations.
+- Encourage potential clients to initiate production inquiries.
+- Establish a foundation for future website expansion.
+
+## 3. Technology stack
+
+The website uses standard front-end web technologies.
+
+- **HTML5:** Structures the website's pages and content.
+- **CSS3:** Controls the visual identity, layouts, typography, responsiveness, and animations.
+- **JavaScript:** Supports interactive elements, including project filtering, navigation interactions, and contact-form handling.
+
+The website is designed as a static front-end project and does not currently require a database or server-side application.
+
+## 4. Website structure
+
+### 4.1 Pages
+
+| File | Purpose | Status |
+|---|---|---|
+| `index.html` | Homepage: project lineup (fanned on desktop, stacked on mobile) followed by the full project grid. | Exists |
+| `work.html` | Portfolio gallery with project filtering and category filters. | Exists |
+| `project-product-film.html` | Static project detail page: Object of Desire (spec commercial concept). | Exists |
+| `project-editorial.html` | Static project detail page: In Their Element (editorial photography concept). | Exists |
+| `project-short-film.html` | Static project detail page: After Hours (short film concept). | Exists |
+| `project-color-study.html` | Static project detail page: Color, Reconsidered (color grading concept). | Exists |
+| `project-motion-ident.html` | Static project detail page: Form in Flux (motion design concept). | Exists |
+| `services.html` | Overview of RecBay's creative and production services. | Exists |
+| `about.html` | Brand introduction, creative philosophy, and team information. | Exists |
+| `contact.html` | Contact information and project inquiry form. | Exists |
+| `404.html` | Custom page-not-found page. | Exists |
+| `privacy.html` | Privacy policy (placeholder draft for review before launch). | Exists |
+| `css/styles.css` | Shared stylesheet: layout, typography, responsive rules, animations. | Exists |
+| `js/main.js` | Navigation, portfolio filtering, contact-form handling. | Exists |
+| `assets/images/recbay-mark.svg` | Starter brand mark used as favicon and icon. Replace before launch. | Exists |
+| `sitemap.xml` | Search-engine sitemap (domain placeholder must be updated). | Exists |
+| `robots.txt` | Search-engine crawling policy (domain placeholder must be updated). | Exists |
+
+### 4.2 Main navigation
+
+The website is organized around five primary sections:
+
+1. Home
+2. Work
+3. Services
+4. About
+5. Contact
+
+Individual project pages provide additional detail without complicating the main navigation.
+
+### 4.3 Project folder structure — existing vs intended
+
+The table below marks each item **Exists** (committed to the repository) or **Intended** (documented structure to be created as content is added). Empty asset directories contain `.gitkeep` files so the folders track in Git; replace the `.gitkeep` files with real assets as production work is added.
+
+| Path | Status | Purpose |
+|---|---|---|
+| `index.html`, `work.html`, `services.html`, `about.html`, `contact.html`, `404.html`, `privacy.html` | Exists | Website pages |
+| `project-*.html` (five files) | Exists | Static project detail pages |
+| `README.md` | Exists | Project documentation (this file) |
+| `css/styles.css` | Exists | Shared stylesheet |
+| `js/main.js` | Exists | JavaScript |
+| `assets/images/recbay-mark.svg` | Exists | Starter brand mark / favicon |
+| `assets/images/brand/recbay-logo.svg` | Exists | Placeholder brand mark — replace with final owned/licensed logo |
+| `assets/images/home/hero-study.svg` | Exists | Retired Home hero placeholder — no longer referenced after the lineup pass |
+| `assets/images/projects/product-film.svg` | Exists | Placeholder project still (Object of Desire) |
+| `assets/images/projects/editorial.svg` | Exists | Placeholder project still (In Their Element) |
+| `assets/images/projects/short-film.svg` | Exists | Placeholder project still (After Hours) |
+| `assets/images/projects/color-study.svg` | Exists | Placeholder project still (Color, Reconsidered) |
+| `assets/images/projects/motion-ident.svg` | Exists | Placeholder project still (Form in Flux) |
+| `assets/images/projects/lineup/` | Intended | 3:4 portrait crops for the five Home lineup cards |
+| `assets/images/about/about-study.svg` | Exists | Placeholder about-page image |
+| `assets/videos/showreel-poster.webp` | Exists | Current Work showreel poster |
+| `assets/videos/showreel.mp4` | Exists (draft) | Draft showreel; not yet wired into the Work page |
+| `assets/videos/hero-16x9.mp4`, `hero-16x9.webm` | Exists (draft) | Retired Home hero loop — unused after the lineup pass |
+| `assets/icons/arrow.svg`, `play.svg`, `close.svg` | Exists | Interface icon placeholders |
+| `assets/images/brand/`, `assets/images/projects/`, `assets/images/home/`, `assets/images/about/`, `assets/videos/`, `assets/icons/`, `assets/fonts/` | Intended folder structure | `.gitkeep` present in each; replace with real assets as production work is added |
+
+**Note:** `README.txt` was retired; this `README.md` is the single source of project documentation. The folder structure references `README.md`.
+
+## 5. Services
+
+The portfolio presents six core services:
+
+### Video Editing
+Professional editing, pacing, storytelling, sequencing, and post-production for digital and commercial content.
+
+### Visual Production
+Creative development and production of visual content for brands, individuals, organizations, and digital platforms.
+
+### Commercials and Brand Films
+Promotional videos, advertising content, brand stories, and campaign films designed to communicate a clear message.
+
+### Photography
+Creative, commercial, editorial, and promotional photography.
+
+### Motion Graphics and VFX
+Animated typography, graphic sequences, visual effects, and supporting visual elements for video production.
+
+### Color Grading
+Color correction and creative grading to establish visual consistency, mood, and cinematic character.
+
+## 6. Portfolio project concepts
+
+The initial portfolio is built around five original project concepts intended to demonstrate the team's range:
+
+1. **Product Film:** A cinematic product-focused commercial emphasizing lighting, detail, and visual storytelling.
+2. **Editorial Photography:** A photographic series demonstrating composition, lighting, and creative direction.
+3. **Short Film:** A narrative-driven production highlighting editing, pacing, and storytelling.
+4. **Color Grading Showcase:** A demonstration of color treatment, tonal consistency, and visual mood.
+5. **Motion Design:** A motion graphics concept demonstrating animation, typography, and visual effects.
+
+These concepts should be replaced or supplemented with actual RecBay productions as they become available. Concept work must be clearly identified as such and should not be represented as commissioned client work.
+
+## 7. Brand direction
+
+The visual identity is a cream/lime neo-brutalist system with a dark editorial interior on About.
+
+**Core principles:**
+
+- Cream `#f7f4ec` page surfaces, near-black `#101010` type and borders, white panels, and lime `#b8ff45` accents.
+- 3px black borders, hard offset shadows, zero radius; buttons move 2px on hover and 4px on active.
+- Archivo Black for display type, Space Mono for body and metadata, and Helvetica only inside the About editorial content.
+- Home opens with a project lineup, not a hero: five cards fan out on desktop and stack on mobile.
+- About is the only dark editorial section; the rest of the site follows the active light or dark theme.
+- Clear calls to action and consistent presentation across desktop and mobile devices.
+
+The current wordmark and visual styling serve as an initial brand direction. The final identity can be refined as RecBay establishes its preferred logo, typography, colors, and visual guidelines.
+
+## 8. Concept labeling in the UI
+
+Concept work is labeled in the interface, not only in this document:
+
+- Every project card on `index.html` and `work.html` lists its type as "Concept" in the project meta.
+- Every static project page lists **Status: Concept / self-initiated** in its project facts.
+
+Concepts must not be represented as commissioned client work. Replace them with real, client-cleared productions as they are produced.
+
+## 9. Project detail pages and SEO
+
+**Decision:** each project has its own static HTML page (`project-product-film.html`, etc.) instead of a single query-parameter detail page.
+
+**Why:** query-parameter detail pages share one URL, one title, and one description across all projects, which harms indexing and makes links impossible to share meaningfully. Static pages give each project a unique URL, unique title and meta description, a canonical URL, and its own Open Graph / Twitter card data — better for SEO and shareability.
+
+The static project pages are the only detail templates; no query-parameter template remains.
+
+When adding future projects, generate a static page per project using the case-study template in Section 10 rather than extending the query-parameter approach.
+
+## 10. Case-study template
+
+Use this template for every finished project page:
+
+```markdown
+## [Project title]
+
+**Status:** Concept / self-initiated  |  Completed client work  |  In progress  
+**Year:** [YYYY]  
+**Disciplines:** [e.g. Production, editing, color]  
+**Tools:** [cameras, software, techniques]  
+**Credits:** [crew and collaborators]
+
+### Creative brief
+The problem or opportunity, the intended audience, and the desired outcome.
+
+### RecBay's role
+What RecBay contributed (creative direction, production, editing, grading, etc.).
+
+### Process
+The steps taken from brief to delivery.
+
+### Deliverables
+What was produced (film, image series, grade, social cuts, etc.).
+
+### Process notes
+What was learned, constraints, and decisions worth sharing with prospective clients.
+```
+
+Replace concept text with the real case study once each project is produced, and update the status field accordingly.
+
+## 11. Installation and local preview
+
+### Requirements
+
+- A modern web browser.
+- A code editor such as Visual Studio Code, if source-code editing is required.
+
+No package manager or build process is required for the basic static website.
+
+### Setup
+
+1. **Clone the repository** (recommended, since the project is distributed via Git):
+
+   ```bash
+   git clone <repository-url>
+   cd recbay-portfolio
+   ```
+
+   Or download the repository as a ZIP from the repository page, extract it, and open the folder.
+
+2. Open the project folder in your preferred code editor.
+3. Open `index.html` in a browser to preview the website.
+
+For a more reliable local development environment, use Visual Studio Code with the Live Server extension and launch `index.html` through the local server.
+
+## 12. Customization and placeholder inventory
+
+Before publishing, review and customize the following:
+
+- **Brand identity:** Refine the logo, colors, typography, and brand messaging.
+- **Portfolio content:** Replace concept visuals with original photographs, videos, and production stills.
+- **Project descriptions:** Add the creative brief, RecBay's role, process, and deliverables (case-study template, Section 10).
+- **Contact information:** Replace placeholder email addresses with a working business email and add appropriate social media links.
+- **Navigation and links:** Verify that every page and call to action points to the correct destination.
+- **Metadata:** Update page titles, descriptions, canonical URLs, and social-sharing information.
+- **Accessibility:** Check image alternative text, keyboard navigation, color contrast, and video captions.
+
+### Placeholder inventory
+
+Every item below must be replaced or confirmed before a professional launch:
+
+| Placeholder | Current value | Location(s) | Action before launch |
+|---|---|---|---|
+| Business email | `hello@recbay.example` | `contact.html`, all page footers, `js/main.js` | Replace with RecBay's real business email |
+| Social links | None present | Footer | Add real social profiles or remove the links |
+| Form endpoint | `mailto:` fallback / Netlify Forms markup | `contact.html`, `js/main.js` | Connect a form backend (Section 13) |
+| Domain | Not configured | `sitemap.xml`, `robots.txt`, canonical URLs | Purchase a domain and update all URLs |
+| Analytics ID | None | Not implemented | Add only with user consent |
+| Project images | SVG placeholders | `assets/images/projects/*.svg` | Replace with optimized WebP/AVIF stills |
+| Home lineup crops | Reuses the five project SVGs | `index.html` lineup cards | Supply 3:4 portrait crops for all five projects; no Home hero video is used |
+| About images | SVG placeholders | `assets/images/about/room-still.svg`, `portrait-still.svg` | Replace with real about-page images |
+| Brand logo | SVG placeholder | `assets/images/brand/recbay-logo.svg`, `assets/images/recbay-mark.svg` | Replace with final owned/licensed logo |
+| Video | Draft poster and reel | `assets/videos/showreel-poster.webp`, `showreel.mp4` (draft) | Add compressed final showreel (WebM/MP4) + poster; no autoplay with sound |
+| Icons | SVG placeholders | `assets/icons/arrow.svg`, `play.svg`, `close.svg` | Replace with final icon set |
+
+## 13. Contact form
+
+### Chosen submission method: Netlify Forms
+
+The contact form is set up for **Netlify Forms**: a static-site-friendly service requiring no backend code. The form in `contact.html` uses `name="contact"` with a hidden `form-name` field, and `js/main.js` submits to the same origin with the `form-name` header. On deploy, Netlify detects the form and delivers submissions to site notifications and (optionally) email.
+
+**Alternatives:** Formspree, Cloudflare Pages Functions, or a private serverless endpoint. To switch, update the form `action` and the fetch call in `js/main.js`, and re-verify validation and spam protection.
+
+### Implementation
+
+- Built-in HTML5 validation: required fields and `type="email"`.
+- **Honeypot field** (`hp`): hidden from users with CSS; any submission containing a value is rejected by the JavaScript handler.
+- **Privacy consent:** a required checkbox linked to `privacy.html`.
+- **JavaScript handling:** intercepts submit, validates honeypot, consent, and field validity, then posts to the form endpoint and shows inline success/error states (`aria-live="polite"`).
+- No submissions are stored by the site itself; they are delivered to RecBay's business email via the form provider.
+
+### Data handling
+
+Submissions contain name, email, service interest, budget, timeline, and message. They are used only to respond to the inquiry and coordinate potential production work. Data is not sold or shared with third parties except as handled by the chosen form provider — review that provider's privacy terms before launch. Data is not used for marketing without explicit consent. See `privacy.html` (placeholder draft, to be finalized before launch).
+
+## 14. Accessibility requirements
+
+- **Alt text:** descriptive alternative text on all content images; empty alt or `aria-hidden` on decorative images.
+- **Video:** captions or transcripts for all video content.
+- **Keyboard navigation:** all menus, controls, and forms operable by keyboard; visible focus states.
+- **Skip link:** "Skip to content" link at the top of every page.
+- **Color contrast:** dark-theme text meets WCAG AA (4.5:1 normal text, 3:1 large text).
+- **Theme:** the header toggle switches light/dark mode; first visit follows `prefers-color-scheme`, an explicit choice is stored in `localStorage`, and the browser `theme-color` updates with the active theme.
+- **Reduced motion:** animations and transitions honor `prefers-reduced-motion: reduce` (already implemented in `css/styles.css`).
+- **Semantics:** logical heading order, labels on every input, landmark regions.
+
+## 15. Performance requirements
+
+### Implemented
+- **Lazy loading:** `loading="lazy"` + `decoding="async"` on below-the-fold project-grid images; the five Home lineup cards use `loading="eager"` because the lineup is above the fold, with the centre card marked `fetchpriority="high"`.
+- **Image dimensions:** explicit `width`/`height` on every image to prevent layout shift.
+- **Resource hints:** `<link rel="preload">` for the centre Home lineup image and `css/styles.css` on the homepage.
+- **Deferred JavaScript:** `js/main.js` loaded with `defer`; non-critical JS deferred.
+- **Video:** no video is currently embedded; the draft showreel is not wired into the Work page.
+- **Reduced motion:** `prefers-reduced-motion: reduce` disables animations/transitions.
+
+### To implement before launch
+- **Responsive images:** `srcset`/`sizes` with WebP/AVIF sources and fallbacks for every project still and Home lineup crop.
+- **Compressed video:** encode `assets/videos/showreel.mp4` (H.264/H.265 or AV1, compressed, web-optimized).
+- **Cache headers:** long-lived cache headers for static assets, short-lived for HTML, configured at the host/CDN.
+- **Font optimization:** `font-display: swap` if custom fonts are added; self-host to avoid third-party requests.
+
+## 16. SEO and metadata
+
+- Unique page title and meta description on every page.
+- Canonical URLs; pick one canonical host (www or non-www) and redirect the other.
+- Open Graph and Twitter card tags on project pages for rich sharing.
+- `sitemap.xml` and `robots.txt` included; submit the sitemap to search consoles after launch (update the domain placeholders first).
+- Favicon included (SVG starter; replace with a final multi-size favicon).
+- Custom `404.html` page included.
+- Descriptive, human-readable URLs (static project pages, not query parameters).
+
+## 17. Privacy and legal
+
+- Publish a privacy policy (`privacy.html` placeholder included) linked from the contact form and footer.
+- Request cookie/analytics consent before enabling any non-essential tracking if analytics are added.
+- Confirm licenses for fonts, images, video, music, and icons (see Section 22.3).
+- Obtain model/location releases for recognizable people or private property shown in portfolio work.
+
+## 18. QA/testing checklist
+
+- [ ] Mobile layouts (phones, tablets, desktop).
+- [ ] Keyboard navigation (Tab order, skip link, menus, forms).
+- [ ] Link checks (internal and external links, no broken links).
+- [ ] Form testing (validation, honeypot rejection, success/error states, consent).
+- [ ] Browser testing (Chrome, Firefox, Safari, Edge; mobile Safari and Chrome).
+- [ ] Lighthouse performance audit and axe accessibility audit.
+- [ ] W3C HTML and CSS validation.
+- [ ] 404 test: missing page returns the custom 404 page and is usable.
+- [ ] Live form submission test on staging/production before announcing the site.
+
+## 19. Known limitations
+
+- This is a concept-stage starter: all five portfolio projects are concepts or placeholders, not commissioned client work.
+- The contact form is not production-ready until a submission backend is connected, tested, and protected against spam.
+- Business contact details, domain, analytics, social links, and final brand assets are missing (see the placeholder inventory in Section 12).
+- Query-parameter detail pages are not used in production; the static project pages are authoritative.
+
+## 20. Current project status
+
+| Area | Status | Notes |
+|---|---|---|
+| Site structure and pages | Done | Home, work, services, about, contact, plus 404 and privacy pages |
+| Static project detail pages | Done | Five static project pages |
+| Styles, layout, responsiveness | Done | Cream/lime brutalist system with mobile breakpoints and `prefers-reduced-motion` |
+| Navigation and skip link | Done | Mobile menu and keyboard-accessible navigation |
+| Home project lineup | Done | Five-card fan on desktop, stacked deck on mobile; no Home hero video or headline |
+| Concept labeling in UI | Done | CONCEPT labels on Home, `work.html`, and project pages |
+| Contact form UI and validation | Done | Honeypot, required consent, success/error states |
+| Contact form submission backend | Placeholder | Netlify Forms markup ready; endpoint must be connected and tested live |
+| Placeholder inventory | Done | See Section 12 |
+| 404 page, `robots.txt`, `sitemap.xml` | Done | Domain placeholders must be updated before launch |
+| Privacy policy page | Placeholder | Draft for legal review before launch |
+| Favicon | Placeholder | `recbay-mark.svg`; replace with final brand asset |
+| Real business email | Not started | `hello@recbay.example` appears throughout |
+| Project images | Placeholder | SVG placeholders in `assets/images/projects/`; replace with WebP/AVIF stills |
+| Home lineup / about images | Placeholder | Lineup reuses the project SVGs; supply 3:4 portrait crops. About stills are placeholders |
+| Video | Draft | `showreel-poster.webp` exists; `showreel.mp4` is a draft and is not wired into the page |
+| Final brand identity | Not started | Logo, typography, and colors to be finalized |
+| Analytics | Not started | Add only with consent mechanism |
+| Domain, DNS, hosting | Not started | See deployment checklist (Section 21) |
+| Live form test | Not started | Required before launch |
+
+## 21. Deployment checklist
+
+- [ ] HTTPS enabled on the hosting platform.
+- [ ] Custom domain purchased and DNS configured.
+- [ ] www vs non-www redirect configured to one canonical host.
+- [ ] Cache headers set: short-lived for HTML, long-lived for static assets.
+- [ ] Canonical URLs, `sitemap.xml`, and `robots.txt` point to the live domain.
+- [ ] Live contact form submission test, including error and consent paths.
+- [ ] 404 test: request a missing URL and confirm `404.html` renders.
+- [ ] Analytics configured only after the consent mechanism is in place.
+- [ ] Favicon and social-preview images present.
+- [ ] Honeypot spam protection tested.
+
+## 22. License and usage
+
+### 22.1 Code license
+
+The HTML, CSS, and JavaScript written for this site are intended for RecBay's portfolio. Confirm and insert the chosen code license (for example MIT) before launch.
+
+### 22.2 Original content license
+
+Original text, structure, and concept visuals created for RecBay: © RecBay. All rights reserved. Do not reproduce without permission.
+
+### 22.3 Third-party asset licenses
+
+Fonts, photographs, video footage, music, and icons remain subject to their own licenses. Confirm commercial, web, and modification rights for every third-party asset before publishing. The starter `recbay-mark.svg` is a placeholder brand mark — replace it with a final owned or licensed logo.
+
+## 23. Changelog
+
+### v1.10.0 - 2026-10-22
+
+- Removed the Home hero video and headline. The homepage now opens with a five-project lineup: a fanned deck on desktop, a stacked deck on mobile.
+- The lineup is decorative (`aria-hidden`) and links nowhere; the full project grid below is the accessible navigation.
+- Replaced the featured first project card with a uniform project grid containing all five concepts, starting with project 01. The first lineup card repeats as project 01 below.
+- Added numbered project metadata on Home (`01 · Product film · Concept`) and simplified the section heading to "All work."
+- Retired the Home hero CSS and JS; the old hero video and poster remain on disk but are no longer referenced.
+- Updated `ASSET-SOURCING.md` for portrait lineup crops and removed the Home hero loop from the minimum launch set.
+
+### v1.9.0 - 2026-10-22
+
+- Added a device-aware light/dark theme. On first visit the site follows `prefers-color-scheme`; an explicit toggle choice is stored in `localStorage` and applied before CSS to avoid a flash.
+- Added a header theme toggle outside the primary navigation so it stays visible on mobile. It updates its accessible label, title, and the `theme-color` meta tag, and continues following system changes until the visitor makes an explicit choice.
+- Added dark tokens for page surfaces, panels, text, borders, hard shadows, form controls, notices, and lime accent surfaces; the About hero and team section remain dark/editorial in both modes.
+- Fixed the active Contact nav CTA contrast in dark mode and verified no horizontal overflow at 390, 520, 800, 801, 1024, and 1366px. Lighthouse remains 100 for Accessibility, Best Practices, and SEO on tested pages in both themes.
+
+### v1.8.0 — 2026-10-21
+
+- Home hero rebuilt as a true full-bleed video: the `<video>` is now a direct child of `.hero` (not inside the max-width container), so it covers the viewport edge to edge.
+- Added a two-way legibility scrim over the video and moved the hero copy to a bottom-left anchor with a hairline rule — the headline no longer collides with the video frame, and the CTA is a light solid button that reads over footage.
+- Home headline capped at `clamp(40px, 6.2vw, 88px)` with a 16ch measure; removed the invalid `loading`/`decoding`/`fetchpriority` attributes from `<video>` and the empty caption track.
+- Showreel video no longer uses `class="hero-image"` (which forced `position:absolute; z-index:-1` and hid it); introduced a normal-flow `.showreel` component. Both videos are silent, autoplay, looping, and control-free.
+- Work hero layout fixed: the visual was `height:100%` inside an auto-height parent and collapsed to zero, which also exposed a native horizontal scrollbar. The visual is now absolutely inset to a full-width hero, the strip fills the row, and the scrollbar is gone.
+- Work hero metadata reorganised into label/date + a bottom rail (count + trust line + filters). Meta is visible at rest; filters are clickable again (`pointer-events` was disabled by the parent).
+- Project count is now derived in JS from `.project-grid .project-card[data-category]` and rendered as `05 PROJECTS` (HTML fallback also updated from 24).
+- Mobile work strip is a duplicated, seamless marquee instead of an overflowing scroller.
+- Services hero rebuilt as a 6-column grid: stage labels (`CAPTURE / SHAPE / DELIVER`) span two nodes each, dots sit on a single hairline, and names no longer overlap the line or run off-screen. The sixth node is visible.
+- Services mobile is a left-aligned vertical timeline (dot · number · name) with the stage labels as a `CAPTURE → SHAPE → DELIVER` legend — no competing numerals.
+- Services line now draws vertically on mobile (`scaleY`) and horizontally on desktop, with matching static/reduced-motion fallbacks.
+- About hero fixed: the image wrapper was `height:100%` inside an auto-height container and collapsed to zero, hiding the still and pushing the caption to the top. The image is now an absolute full-bleed layer with a bottom-weighted scrim.
+- About caption is a balanced two-column bottom rail (belief + fact left, "The team ↓" right) instead of a corner block with dead space; mobile stacks cleanly.
+- Placeholder `room-still.svg` lightened so the production-room scene is actually legible behind the scrim.
+- Footer/CTA and mobile hero rules retuned for `100svh` and the new bottom-anchored layout.
+- Removed the global `img[loading="lazy"]{opacity:0}` gate. Nothing ever added `.is-loaded`, so every lazy-loaded thumbnail, contact-sheet still, and project image was invisible.
+- Work filter categories corrected (`post` → `grade` / `motion`); Motion and Grade no longer return an empty grid.
+- Privacy page switched from the two-column `about-grid` to a single readable `legal-layout`.
+- Added explicit no-JS fallbacks for the services diagram and about caption so they render fully if JS fails.
+- Video playback is now started explicitly with `video.play()` after load (some browsers defer attribute autoplay). The call is muted and failure-safe; `prefers-reduced-motion` and `Save-Data` visitors keep the poster instead of a moving loop.
+- Accessibility: removed the redundant `aria-label` on wordmark links so the visible text is the accessible name; raised contrast on light-surface metadata (`#777` → `#666`), hero numerals (`#8a8a8a`), dark-surface small notes (`#9a9a9a`), and stopped the consent sentence inheriting the lime required-field colour.
+- Lighthouse (desktop-headless run): Home, Work, Services, About, and Contact all score 100 for Accessibility and SEO; Best Practices 100 where reported.
+
+### v1.7.0 — 2026-10-21
+
+- Privacy checkbox: reduced from 44px touch target to 20px square — no longer oversized.
+- About hero caption: spans full width (left:6vw to right:6vw) instead of crammed in corner; eliminates empty dark space below caption.
+- Services hero mobile: nodes stack vertically (dot → number → name) instead of horizontal row — numbers no longer compete with text.
+- Videos: autoplay loop muted, `controls` attribute removed — clean UI, no player chrome.
+- Home hero video: `hero-16x9.webm` and `hero-16x9.mp4` now autoplay looping; poster shows until video loads.
+- Showreel video: `autoplay loop muted playsinline` without `controls`; `showreel.mp4` still needs to be sourced.
+
+### v1.6.0 — 2026-10-21
+
+- Work hero project count made data-driven: counts `.project-card[data-category]` elements and writes `NN PROJECTS` into the hero — never hardcoded.
+- Contact page: no hero section (flagged in README §7 — needs its own brief before assets can be listed).
+
+### v1.5.0 — 2026-10-21
+
+- About page hero replaced with documentary still (full-height monochrome image + bottom-left caption block).
+  - 100vh full-bleed monochrome still with duotone treatment (grayscale + contrast in CSS).
+  - Ambient drift: scales 1.000 → 1.030 → 1.000 over 12s, imperceptible frame to frame.
+  - One-time entrance (~900ms): hairline draws, then belief line, fact line, and scroll cue fade up together.
+  - Caption block: belief line ("We build films frame by frame."), fact line, "The team ↓" scroll cue.
+  - Metadata rail: ABOUT (top-left), EST. 20XX (top-right).
+  - Mobile: 70vh, caption full-width bottom-aligned.
+  - Fallbacks: prefers-reduced-motion, no-JS, Save-Data all render static.
+  - Placeholder images: assets/images/about/room-still.svg (default), assets/images/about/portrait-still.svg (alternate).
+  - Body enhanced: founding story, team roles, process steps.
+
+### v1.4.0 — 2026-10-21
+
+- Services page hero replaced with production chain diagram (routing table).
+  - 70vh static hero with 6 numbered service nodes on a single hairline: CAPTURE → SHAPE → DELIVER.
+  - Functions as jump-nav into each service section below.
+  - One-time draw animation (~1.4s), then completely still — no video, no scroll-linked motion.
+  - Bottom CTA line: "Not sure what you need? → Start a project" for visitors who don't know the vocabulary.
+  - Mobile: vertical timeline with stage dividers, 44px tap targets.
+  - Fallbacks: prefers-reduced-motion, no-JS, Save-Data all render static.
+- Service body sections enhanced with scope notes under each description.
+
+### v1.3.0 — 2026-10-21
+
+- Work page hero replaced with scroll-linked pull-back (no video).
+  - 90vh hero (60vh mobile) with one tight-cropped project still that pulls back to full frame as the visitor scrolls.
+  - Dark overlay lightens from 55% → 20% as the image pulls back.
+  - Contact-sheet strip (12 stills) slides up from the bottom and resolves into the grid; on mobile it becomes an 18s auto-marquee.
+  - Utilitarian type only: SELECTED WORK label, 2024—2026 date range, data-driven PROJECTS count, "Concept work is labelled" trust line, and filter chips — no headline.
+  - Scroll-linked via `requestAnimationFrame`-throttled JS; static fallback for `prefers-reduced-motion`, `Save-Data`, and no-JS.
+  - Contact sheet placeholders in `assets/images/contact-sheet/01–12.svg`.
+
+### v1.2.0 — 2026-10-21
+
+- Mobile-first optimizations: `viewport-fit=cover` for safe areas on notched devices.
+- Touch targets: 44px minimum on all buttons, nav links, filter buttons, and form controls.
+- `touch-action: manipulation` on all interactive elements to remove 300ms tap delay.
+- `font-size: 16px` on form inputs to prevent iOS auto-zoom on focus.
+- `fetchpriority="high"` on the hero image for faster LCP on mobile.
+- `inputmode="text"` on name and timeline fields for better mobile keyboards.
+- Safe area insets (`env(safe-area-inset-*)`) on header, footer, and sections.
+- `100dvh` hero height for mobile address bar handling.
+- Larger tap targets on mobile navigation (56px min-height links).
+- Responsive grid: single-column project grid below 520px.
+
+### v1.1.0 — 2026-10-21
+
+- Removed arrows from all CTA buttons for a cleaner, human feel.
+- Removed AI-feeling decorative elements: outline text, status dots, grain overlays, framed hero with play button, rotated banner stamp, CSS-generated abstract shapes, and concept badges.
+- Replaced decorative CSS art with SVG placeholder images in `assets/images/`.
+- Simplified page copy and headings.
+- Updated all HTML to clean, unminified markup.
+- `README.txt` retired; this `README.md` is the single documentation source.
+
+### v1.0.0 — 2026-10-20
+
+- Initial public documentation release.
+- Static site foundation: six core pages plus 404 and privacy pages.
+- Five generated static project detail pages for SEO and shareable URLs.
+- Contact form hardened: honeypot, required privacy consent, validation, success/error states.
+- Concept work labeled in the UI; placeholder inventory and status table added.
+- Accessibility, performance, SEO, privacy, QA, deployment, and licensing sections added.
+- `README.txt` retired; this `README.md` is the single documentation source.

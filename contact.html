@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Start a visual production, editing, photography, motion design or color grading project with RecBay.">
+  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var key = 'recbay-theme';
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch (e) {}
+      var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored === 'light' || stored === 'dark' ? stored : (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+      var meta = document.getElementById('theme-color-meta');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+    }());
+  </script>
+  <title>Contact | RecBay</title>
+  <link rel="icon" href="assets/images/recbay-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span class="theme-toggle__icon" aria-hidden="true">
+          <svg class="theme-toggle__sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="theme-toggle__moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </span>
+      </button>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta active" href="contact.html">Start a project</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section">
+      <div class="container contact-layout">
+        <div class="contact-aside">
+          <p class="eyebrow">Let's connect</p>
+          <h2>Good work begins with a conversation.</h2>
+          <p>Use the form to outline what you have in mind. We'll use the details to understand the project and identify the next step.</p>
+          <div class="contact-detail">
+            <span>Email</span><a href="mailto:annchristine894@gmail.com">annchristine894@gmail.com</a>
+          </div>
+          <div class="contact-detail">
+            <span>Phone</span><a href="tel:0732473516">0732473516</a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" name="contact" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+          <label class="honeypot" for="hp"><span>Leave this field empty</span></label>
+          <input id="hp" name="botcheck" type="text" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0">
+          <label for="name">Your name <span>*</span></label><input id="name" name="name" autocomplete="name" required placeholder="Name" inputmode="text">
+          <label for="email">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          <label for="project-type">What do you need?</label><select id="project-type" name="project-type"><option value="">Choose a service</option><option>Visual production</option><option>Video editing</option><option>Commercial or brand film</option><option>Photography</option><option>Motion graphics or VFX</option><option>Color grading</option><option>Something else</option></select>
+          <label for="budget">Estimated budget</label><select id="budget" name="budget"><option value="">Prefer not to say</option><option>Under KSh 10,000</option><option>KSh 10,000–30,000</option><option>KSh 30,000–75,000</option><option>KSh 75,000+</option><option>To be discussed</option></select>
+          <label for="timeline">Ideal timeline</label><input id="timeline" name="timeline" placeholder="e.g. In the next month" inputmode="text">
+          <label for="message">Tell us about the project <span>*</span></label><textarea id="message" name="message" rows="5" required placeholder="The idea, intended audience, deliverables, and anything else we should know..."></textarea>
+          <div class="consent">
+            <input id="consent" name="privacy-consent" type="checkbox" required>
+            <label for="consent">I have read and agree to the</label>
+            <a href="privacy.html">Privacy Policy</a>.
+          </div>
+          <button class="button button-lime form-submit" type="submit">Send inquiry</button>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          <p class="form-hint">Submissions are sent to RecBay's business email and are used only to respond to your inquiry.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top"><a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a><p>Visuals made with intention.</p><a class="button button-outline" href="work.html">Explore the work</a></div>
+    <div class="container footer-bottom"><span>© <span data-year></span> RecBay. All rights reserved.</span><span>Independent creative production</span><a href="mailto:annchristine894@gmail.com">annchristine894@gmail.com</a></div>
+  </footer>
+</body>
+</html>

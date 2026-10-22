@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" aria-label="RecBay hero visual study">
+  <rect width="900" height="500" fill="#101010"/>
+  <ellipse cx="610" cy="240" rx="340" ry="190" fill="#6e6e61"/>
+  <ellipse cx="610" cy="240" rx="260" ry="130" fill="#353731"/>
+  <path d="M200 420h500l-40-80H200z" fill="#171918"/>
+  <text x="450" y="260" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="900" letter-spacing=".16em" fill="#c9c6be" text-anchor="middle">RECBAY VISUAL STUDY</text>
+  <circle cx="450" cy="260" r="6" fill="#b8ff45"/>
+</svg>

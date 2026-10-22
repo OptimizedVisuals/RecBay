@@ -1,0 +1,5 @@
+﻿<!doctype html><meta charset="utf-8"><script>
+const q = new URLSearchParams(location.search);
+localStorage.setItem('recbay-theme', q.get('theme') || 'dark');
+location.replace(q.get('to') || 'index.html');
+</script>

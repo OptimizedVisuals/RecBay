@@ -1,0 +1,7 @@
+# RecBay robots.txt
+# Replace the domain in the sitemap URL before launch.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://recbay.example/sitemap.xml

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" aria-label="RecBay production room placeholder">
+  <defs>
+    <linearGradient id="wall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#323236"/>
+      <stop offset="100%" stop-color="#1b1b1e"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1d"/>
+      <stop offset="100%" stop-color="#0d0d0f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#5a5a60"/>
+      <stop offset="100%" stop-color="#141416"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d4a2c"/>
+      <stop offset="55%" stop-color="#1d2418"/>
+      <stop offset="100%" stop-color="#12140f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#wall)"/>
+  <rect x="0" y="620" width="1600" height="280" fill="url(#floor)"/>
+
+  <!-- back wall panels -->
+  <rect x="150" y="120" width="1300" height="500" fill="#242427"/>
+  <rect x="150" y="120" width="1300" height="500" fill="none" stroke="#3a3a3e" stroke-width="2"/>
+  <line x1="800" y1="120" x2="800" y2="620" stroke="#2e2e32" stroke-width="2"/>
+
+  <!-- monitor on stand -->
+  <rect x="520" y="210" width="560" height="330" rx="6" fill="#121214"/>
+  <rect x="540" y="230" width="520" height="290" fill="url(#screen)"/>
+  <rect x="780" y="540" width="40" height="80" fill="#2a2a2e"/>
+  <rect x="700" y="618" width="200" height="12" rx="6" fill="#2f2f33"/>
+
+  <!-- desk -->
+  <rect x="300" y="700" width="760" height="18" fill="#303034"/>
+  <rect x="330" y="718" width="12" height="120" fill="#26262a"/>
+  <rect x="1018" y="718" width="12" height="120" fill="#26262a"/>
+
+  <!-- desk objects -->
+  <rect x="360" y="660" width="120" height="40" fill="#3a3a3f"/>
+  <rect x="380" y="672" width="80" height="6" fill="#4a4a50"/>
+  <circle cx="600" cy="678" r="9" fill="#b8ff45"/>
+  <rect x="870" y="650" width="150" height="50" rx="4" fill="#2c2c31"/>
+
+  <!-- light stand / softbox -->
+  <rect x="1170" y="250" width="150" height="190" rx="4" fill="#3a3a40"/>
+  <rect x="1188" y="268" width="114" height="154" fill="#4c4c54"/>
+  <rect x="1240" y="440" width="10" height="180" fill="#2c2c31"/>
+  <line x1="1210" y1="620" x2="1280" y2="620" stroke="#2c2c31" stroke-width="10"/>
+
+  <!-- foreground chair silhouette -->
+  <rect x="1080" y="720" width="150" height="26" rx="8" fill="#202024"/>
+  <rect x="1140" y="746" width="30" height="90" fill="#1c1c20"/>
+  <rect x="1110" y="836" width="90" height="10" rx="4" fill="#1c1c20"/>
+
+  <!-- ambient pool of light -->
+  <ellipse cx="800" cy="690" rx="420" ry="90" fill="url(#glow)" opacity="0.35"/>
+
+  <text x="800" y="870" font-family="monospace" font-size="14" letter-spacing="2" fill="#6d6d72" text-anchor="middle">RECBAY PRODUCTION ROOM · PLACEHOLDER · REPLACE WITH REAL TEAM OR SET IMAGE</text>
+</svg>

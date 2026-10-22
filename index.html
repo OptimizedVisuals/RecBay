@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="RecBay is an independent creative production team working across visual production, editing, photography, color grading, motion graphics and VFX.">
+  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var key = 'recbay-theme';
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch (e) {}
+      var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored === 'light' || stored === 'dark' ? stored : (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+      var meta = document.getElementById('theme-color-meta');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+    }());
+  </script>
+  <title>RecBay</title>
+  <link rel="icon" href="assets/images/recbay-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/images/home/hero-poster.webp" as="image">
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span class="theme-toggle__icon" aria-hidden="true">
+          <svg class="theme-toggle__sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="theme-toggle__moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </span>
+      </button>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="contact.html">Start a project</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="sticker">RecBay — 2026</p>
+            <h1 class="hero-title">Visuals made with intention.</h1>
+          </div>
+          <div class="hero-video-frame">
+            <video class="hero-video" poster="assets/images/home/hero-poster.webp" autoplay muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1">
+              <source src="assets/videos/hero-16x9.webm" type="video/webm">
+              <source src="assets/videos/hero-16x9.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <p class="hero-intro">We shape ideas into moving images, photographs, and visual experiences.</p>
+          <a class="button button-lime" href="work.html">Explore the work</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-work">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Ideas brought to life.</h2>
+          </div>
+          <p class="section-note">Films, photographs, and motion work — shaped from first frame to final cut.</p>
+        </div>
+        <div class="project-grid">
+          <a class="project-card project-card-large" href="project-product-film.html">
+            <div class="project-art art-product"><img src="assets/images/projects/object-of-desire-card.webp" alt="Object of Desire — product film still" class="project-image" loading="lazy" decoding="async" width="1920" height="1080"></div>
+            <div class="project-meta"><div><h3>Object of Desire</h3><p>Product film</p></div></div>
+          </a>
+          <a class="project-card" href="project-editorial.html">
+            <div class="project-art art-editorial"><img src="assets/images/projects/in-their-element-card.webp" alt="In Their Element — environmental portrait still" class="project-image" loading="lazy" decoding="async" width="1408" height="768"></div>
+            <div class="project-meta"><div><h3>In Their Element</h3><p>Photography</p></div></div>
+          </a>
+          <a class="project-card" href="project-short-film.html">
+            <div class="project-art art-film"><img src="assets/images/projects/after-hours-card.webp" alt="After Hours — night film still" class="project-image" loading="lazy" decoding="async" width="1920" height="1080"></div>
+            <div class="project-meta"><div><h3>After Hours</h3><p>Short film</p></div></div>
+          </a>
+          <a class="project-card" href="project-color-study.html">
+            <div class="project-art art-grade"><img src="assets/images/projects/color-reconsidered-card.webp" alt="Color, Reconsidered — graded still" class="project-image" loading="lazy" decoding="async" width="1408" height="768"></div>
+            <div class="project-meta"><div><h3>Color, Reconsidered</h3><p>Color grading</p></div></div>
+          </a>
+          <a class="project-card" href="project-motion-ident.html">
+            <div class="project-art art-motion"><img src="assets/images/projects/form-in-flux-card.webp" alt="Form in Flux — motion design styleframe" class="project-image" loading="lazy" decoding="async" width="1408" height="768"></div>
+            <div class="project-meta"><div><h3>Form in Flux</h3><p>Motion design</p></div></div>
+          </a>
+        </div>
+        <div class="center-action"><a class="button button-outline" href="work.html">View all work</a></div>
+      </div>
+    </section>
+
+    <section class="services-band">
+      <div class="container services-band-inner">
+        <div>
+          <p class="eyebrow">What we do</p>
+          <h2>From first frame to final cut.</h2>
+        </div>
+        <div class="service-list">
+          <a href="services.html#visual-production"><span>01</span> Visual production</a>
+          <a href="services.html#video-editing"><span>02</span> Video editing</a>
+          <a href="services.html#brand-films"><span>03</span> Commercials & brand films</a>
+          <a href="services.html#photography"><span>04</span> Photography</a>
+          <a href="services.html#motion-vfx"><span>05</span> Motion graphics & VFX</a>
+          <a href="services.html#color-grading"><span>06</span> Color grading</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="container process-layout">
+        <div>
+          <p class="eyebrow">Our approach</p>
+          <h2>Good work starts with a good question.</h2>
+        </div>
+        <div class="process-content">
+          <p class="large-copy">We bring curiosity to the brief, care to the details, and intention to every frame.</p>
+          <div class="process-steps">
+            <div><span>01</span><h3>Understand</h3><p>We get clear on the idea, audience, and outcome before choosing the visuals.</p></div>
+            <div><span>02</span><h3>Make</h3><p>We shape the concept through thoughtful production and considered craft.</p></div>
+            <div><span>03</span><h3>Refine</h3><p>We edit, grade, and finish the work so every element feels connected.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-banner">
+      <div class="container contact-banner-inner">
+        <p class="eyebrow">Have an idea?</p>
+        <h2>Let's make something worth watching.</h2>
+        <a class="button button-lime" href="contact.html">Start a project</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top"><a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a><p>Visuals made with intention.</p><a class="button button-solid" href="contact.html">Let's talk</a></div>
+    <div class="container footer-bottom"><span>© <span data-year></span> RecBay. All rights reserved.</span><span>Independent creative production</span><a href="mailto:annchristine894@gmail.com">annchristine894@gmail.com</a></div>
+  </footer>
+</body>
+</html>
