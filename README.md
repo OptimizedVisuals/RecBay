@@ -1,8 +1,8 @@
 # RecBay Production Portfolio Website
 
-**Version:** 1.10.0  
+**Version:** 1.11.0  
 **Last updated:** 2026-10-22  
-**Status:** Home project-lineup pass - no hero, fanned desktop deck, stacked mobile deck
+**Status:** Brutalist refinement pass - split hero with clickable showreel, filterable Work grid, single Archivo Black display voice, concrete copy
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ RecBay is a creative production team specializing in video editing, visual produ
 
 This website serves as RecBay's digital portfolio, presenting its creative identity, showcasing selected projects, explaining its services, and providing a point of contact for potential clients and collaborators.
 
-The website uses a cream, black, and lime neo-brutalist design system: 3px borders, hard offset shadows, zero radius, Archivo Black display type, and Space Mono for body and metadata. The About page keeps a dark editorial interior as a deliberate contrast. A device-aware light/dark theme is available on every page, with the visitor's explicit choice stored locally.
+The website uses a cream, black, and lime neo-brutalist design system: 3px borders, hard offset shadows, zero radius, Archivo Black for all display headings, Helvetica Neue for body copy, and Space Mono for labels, eyebrows, metadata, and buttons. The homepage opens with a split hero — headline plus a clickable showreel link — followed by the 15-second showreel section; the Work page owns the full filterable project grid. The About page keeps a dark editorial interior as a deliberate contrast. A device-aware light/dark theme is available on every page, with the visitor's explicit choice stored locally.
 
 ## 2. Project objectives
 
@@ -65,8 +65,8 @@ The website is designed as a static front-end project and does not currently req
 
 | File | Purpose | Status |
 |---|---|---|
-| `index.html` | Homepage: project lineup (fanned on desktop, stacked on mobile) followed by the full project grid. | Exists |
-| `work.html` | Portfolio gallery with project filtering and category filters. | Exists |
+| `index.html` | Homepage: split hero with a clickable showreel link, the 15-second showreel section, a selected-work grid, services, process, and a contact banner. | Exists |
+| `work.html` | Portfolio gallery: "Five projects, four disciplines" intro, category filters (All/Film/Photography/Motion/Grade), concept labelling, and a concept-work notice. | Exists |
 | `project-product-film.html` | Static project detail page: Object of Desire (spec commercial concept). | Exists |
 | `project-editorial.html` | Static project detail page: In Their Element (editorial photography concept). | Exists |
 | `project-short-film.html` | Static project detail page: After Hours (short film concept). | Exists |
@@ -108,17 +108,21 @@ The table below marks each item **Exists** (committed to the repository) or **In
 | `js/main.js` | Exists | JavaScript |
 | `assets/images/recbay-mark.svg` | Exists | Starter brand mark / favicon |
 | `assets/images/brand/recbay-logo.svg` | Exists | Placeholder brand mark — replace with final owned/licensed logo |
-| `assets/images/home/hero-study.svg` | Exists | Retired Home hero placeholder — no longer referenced after the lineup pass |
-| `assets/images/projects/product-film.svg` | Exists | Placeholder project still (Object of Desire) |
-| `assets/images/projects/editorial.svg` | Exists | Placeholder project still (In Their Element) |
-| `assets/images/projects/short-film.svg` | Exists | Placeholder project still (After Hours) |
-| `assets/images/projects/color-study.svg` | Exists | Placeholder project still (Color, Reconsidered) |
-| `assets/images/projects/motion-ident.svg` | Exists | Placeholder project still (Form in Flux) |
-| `assets/images/projects/lineup/` | Intended | 3:4 portrait crops for the five Home lineup cards |
-| `assets/images/about/about-study.svg` | Exists | Placeholder about-page image |
-| `assets/videos/showreel-poster.webp` | Exists | Current Work showreel poster |
-| `assets/videos/showreel.mp4` | Exists (draft) | Draft showreel; not yet wired into the Work page |
-| `assets/videos/hero-16x9.mp4`, `hero-16x9.webm` | Exists (draft) | Retired Home hero loop — unused after the lineup pass |
+| `assets/images/home/hero-poster.webp` | Exists | Home hero video poster (preloaded on the homepage) |
+| `assets/images/home/hero-study.svg` | Exists (unreferenced) | Legacy hero placeholder — superseded by the hero poster and video |
+| `assets/images/projects/object-of-desire-card.webp` | Exists | Project card still (Object of Desire); also used as the showreel poster frame |
+| `assets/images/projects/in-their-element-card.webp` | Exists | Project card still (In Their Element) |
+| `assets/images/projects/after-hours-card.webp` | Exists | Project card still (After Hours) |
+| `assets/images/projects/color-reconsidered-card.webp` | Exists | Project card still (Color, Reconsidered) |
+| `assets/images/projects/form-in-flux-card.webp` | Exists | Project card still (Form in Flux) |
+| `assets/images/projects/*.svg` (five files) | Exists (unreferenced) | Legacy SVG project placeholders — superseded by the WebP cards; safe to delete |
+| `assets/images/about/about-hero.webp`, `about-body.webp` | Exists | About hero and body images |
+| `assets/images/about/*.svg` (three files) | Exists (unreferenced) | Legacy About placeholders — superseded by the WebP images |
+| `assets/images/contact-sheet/*.svg` (twelve files) | Exists (unreferenced) | Legacy Work-hero contact sheet — no longer referenced |
+| `assets/videos/hero-16x9.mp4`, `hero-16x9.webm` | Exists (draft) | Home hero looping video; `hero-1x1.mp4`, `hero-9x16.*`, and `hero-v2-9x16.webm` are unused alternate exports |
+| `assets/videos/showreel-poster.webp` | Exists | Showreel poster in the homepage showreel section |
+| `assets/videos/showreel.mp4` + `.webm` | Exists (draft) | Wired into the homepage showreel section (click-to-play, `preload="none"`); the MP4 is 8.8 MB and needs a compressed final encode |
+| `assets/videos/showreyyel.mp4` | Exists (unreferenced) | Typo-named duplicate draft; not referenced anywhere — delete once confirmed |
 | `assets/icons/arrow.svg`, `play.svg`, `close.svg` | Exists | Interface icon placeholders |
 | `assets/images/brand/`, `assets/images/projects/`, `assets/images/home/`, `assets/images/about/`, `assets/videos/`, `assets/icons/`, `assets/fonts/` | Intended folder structure | `.gitkeep` present in each; replace with real assets as production work is added |
 
@@ -166,9 +170,10 @@ The visual identity is a cream/lime neo-brutalist system with a dark editorial i
 
 - Cream `#f7f4ec` page surfaces, near-black `#101010` type and borders, white panels, and lime `#b8ff45` accents.
 - 3px black borders, hard offset shadows, zero radius; buttons move 2px on hover and 4px on active.
-- Archivo Black for display type, Space Mono for body and metadata, and Helvetica only inside the About editorial content.
-- Home opens with a project lineup, not a hero: five cards fan out on desktop and stack on mobile.
-- About is the only dark editorial section; the rest of the site follows the active light or dark theme.
+- One display voice: Archivo Black, uppercase, on every heading — including the About section headings and the service and project detail headings. Body copy is Helvetica Neue at 16–17px; Space Mono is reserved for labels, eyebrows, metadata, and buttons.
+- Home opens with a split hero: the headline sits beside a clickable showreel video that jumps to the showreel section below it. The Work page owns the full filterable project grid (the old fanned deck was removed).
+- Light-toned artwork is dimmed with a CSS filter and a scrim in dark mode so it sits calmly on dark surfaces.
+- About is the only dark editorial section; the rest of the site follows the active light or dark theme. The About photo-hero belief line stays in the editorial text style as the one deliberate exception.
 - Clear calls to action and consistent presentation across desktop and mobile devices.
 
 The current wordmark and visual styling serve as an initial brand direction. The final identity can be refined as RecBay establishes its preferred logo, typography, colors, and visual guidelines.
@@ -177,7 +182,8 @@ The current wordmark and visual styling serve as an initial brand direction. The
 
 Concept work is labeled in the interface, not only in this document:
 
-- Every project card on `index.html` and `work.html` lists its type as "Concept" in the project meta.
+- Every project card on `index.html` and `work.html` lists its type and a "Concept" marker in the project meta (for example, "01 · Product film · Concept").
+- `work.html` carries a notice under the grid stating that the five projects are self-initiated studies, not commissioned client productions.
 - Every static project page lists **Status: Concept / self-initiated** in its project facts.
 
 Concepts must not be represented as commissioned client work. Replace them with real, client-cleared productions as they are produced.
@@ -266,25 +272,25 @@ Every item below must be replaced or confirmed before a professional launch:
 
 | Placeholder | Current value | Location(s) | Action before launch |
 |---|---|---|---|
-| Business email | `hello@recbay.example` | `contact.html`, all page footers, `js/main.js` | Replace with RecBay's real business email |
-| Social links | None present | Footer | Add real social profiles or remove the links |
-| Form endpoint | `mailto:` fallback / Netlify Forms markup | `contact.html`, `js/main.js` | Connect a form backend (Section 13) |
-| Domain | Not configured | `sitemap.xml`, `robots.txt`, canonical URLs | Purchase a domain and update all URLs |
+| Business email | `annchristine894@gmail.com` | `contact.html`, all page footers | Confirm this is the final business email, or replace it everywhere |
+| Social links | None present (deliberate) | Footer | Add real social profiles when they exist; no links are fabricated |
+| Form endpoint | Web3Forms with `YOUR_ACCESS_KEY` placeholder | `contact.html`, `js/main.js` | Sign up for Web3Forms, paste the real access key, and test a live submission (Section 13) |
+| Domain | `recbay.example` placeholder | `sitemap.xml`, `robots.txt`, canonical and Open Graph URLs on project pages | Purchase a domain and update all URLs |
 | Analytics ID | None | Not implemented | Add only with user consent |
-| Project images | SVG placeholders | `assets/images/projects/*.svg` | Replace with optimized WebP/AVIF stills |
-| Home lineup crops | Reuses the five project SVGs | `index.html` lineup cards | Supply 3:4 portrait crops for all five projects; no Home hero video is used |
-| About images | SVG placeholders | `assets/images/about/room-still.svg`, `portrait-still.svg` | Replace with real about-page images |
+| Project images | WebP concept cards | `assets/images/projects/*-card.webp` | Replace with real client work as it is produced; legacy SVG placeholders remain on disk, unreferenced |
+| About images | WebP stills | `assets/images/about/about-hero.webp`, `about-body.webp` | Replace with final RecBay photography when available |
 | Brand logo | SVG placeholder | `assets/images/brand/recbay-logo.svg`, `assets/images/recbay-mark.svg` | Replace with final owned/licensed logo |
-| Video | Draft poster and reel | `assets/videos/showreel-poster.webp`, `showreel.mp4` (draft) | Add compressed final showreel (WebM/MP4) + poster; no autoplay with sound |
+| Showreel | Draft 15-second silent cut | `assets/videos/showreel.mp4` (8.8 MB), `showreel.webm`, `showreel-poster.webp` | Cut and compress the final 60–90 second reel, update the homepage duration copy ("The 15-second cut", "0:15"), and replace the poster (currently byte-identical to the Object of Desire card) |
+| Response-time promise | "We reply within one business day" | `contact.html` (aside and form hint), homepage contact banner, contact `<title>` | Confirm the promise is one RecBay can keep, or reword it |
 | Icons | SVG placeholders | `assets/icons/arrow.svg`, `play.svg`, `close.svg` | Replace with final icon set |
 
 ## 13. Contact form
 
-### Chosen submission method: Netlify Forms
+### Chosen submission method: Web3Forms
 
-The contact form is set up for **Netlify Forms**: a static-site-friendly service requiring no backend code. The form in `contact.html` uses `name="contact"` with a hidden `form-name` field, and `js/main.js` submits to the same origin with the `form-name` header. On deploy, Netlify detects the form and delivers submissions to site notifications and (optionally) email.
+The contact form is set up for **Web3Forms**: a static-site-friendly service that forwards submissions to RecBay's business email and requires no backend code. The form in `contact.html` posts to `https://api.web3forms.com/submit` with a hidden `access_key` field, and `js/main.js` submits it via `fetch` with JSON. The access key is currently the literal placeholder `YOUR_ACCESS_KEY` — sign up at web3forms.com, paste the real key into `contact.html`, and test a live submission before launch.
 
-**Alternatives:** Formspree, Cloudflare Pages Functions, or a private serverless endpoint. To switch, update the form `action` and the fetch call in `js/main.js`, and re-verify validation and spam protection.
+**Alternatives:** Formspree, Netlify Forms, Cloudflare Pages Functions, or a private serverless endpoint. To switch, update the form `action` and the fetch call in `js/main.js`, and re-verify validation and spam protection.
 
 ### Implementation
 
@@ -312,15 +318,15 @@ Submissions contain name, email, service interest, budget, timeline, and message
 ## 15. Performance requirements
 
 ### Implemented
-- **Lazy loading:** `loading="lazy"` + `decoding="async"` on below-the-fold project-grid images; the five Home lineup cards use `loading="eager"` because the lineup is above the fold, with the centre card marked `fetchpriority="high"`.
+- **Lazy loading:** `loading="lazy"` + `decoding="async"` on below-the-fold images (project grid, showreel poster, About body); the homepage hero video uses `preload="metadata"` and its poster is preloaded with `fetchpriority="high"`.
 - **Image dimensions:** explicit `width`/`height` on every image to prevent layout shift.
-- **Resource hints:** `<link rel="preload">` for the centre Home lineup image and `css/styles.css` on the homepage.
+- **Resource hints:** `<link rel="preload">` for the homepage hero poster and `css/styles.css`.
 - **Deferred JavaScript:** `js/main.js` loaded with `defer`; non-critical JS deferred.
-- **Video:** no video is currently embedded; the draft showreel is not wired into the Work page.
+- **Video:** the homepage hero is a muted, inline looping video; the showreel section is poster-first with `preload="none"` and only requests video when the visitor presses play.
 - **Reduced motion:** `prefers-reduced-motion: reduce` disables animations/transitions.
 
 ### To implement before launch
-- **Responsive images:** `srcset`/`sizes` with WebP/AVIF sources and fallbacks for every project still and Home lineup crop.
+- **Responsive images:** `srcset`/`sizes` with WebP/AVIF sources and fallbacks for every project still and the About images.
 - **Compressed video:** encode `assets/videos/showreel.mp4` (H.264/H.265 or AV1, compressed, web-optimized).
 - **Cache headers:** long-lived cache headers for static assets, short-lived for HTML, configured at the host/CDN.
 - **Font optimization:** `font-display: swap` if custom fonts are added; self-host to avoid third-party requests.
@@ -369,18 +375,20 @@ Submissions contain name, email, service interest, budget, timeline, and message
 | Static project detail pages | Done | Five static project pages |
 | Styles, layout, responsiveness | Done | Cream/lime brutalist system with mobile breakpoints and `prefers-reduced-motion` |
 | Navigation and skip link | Done | Mobile menu and keyboard-accessible navigation |
-| Home project lineup | Done | Five-card fan on desktop, stacked deck on mobile; no Home hero video or headline |
-| Concept labeling in UI | Done | CONCEPT labels on Home, `work.html`, and project pages |
+| Home hero + showreel | Done | Split hero with clickable showreel link; 15-second silent showreel section below |
+| Work grid + filters | Done | Filterable 01–05 grid with concept labels and a concept-work notice |
+| Typography system | Done | Archivo Black display voice site-wide (About section headings and service/project headings included); body Helvetica 16–17px; Space Mono for labels |
+| Concept labeling in UI | Done | "Concept" markers on Home and Work cards, notice on `work.html`, status facts on project pages |
 | Contact form UI and validation | Done | Honeypot, required consent, success/error states |
-| Contact form submission backend | Placeholder | Netlify Forms markup ready; endpoint must be connected and tested live |
+| Contact form submission backend | Placeholder | Web3Forms wired; `YOUR_ACCESS_KEY` must be replaced and tested live |
 | Placeholder inventory | Done | See Section 12 |
 | 404 page, `robots.txt`, `sitemap.xml` | Done | Domain placeholders must be updated before launch |
 | Privacy policy page | Placeholder | Draft for legal review before launch |
 | Favicon | Placeholder | `recbay-mark.svg`; replace with final brand asset |
-| Real business email | Not started | `hello@recbay.example` appears throughout |
-| Project images | Placeholder | SVG placeholders in `assets/images/projects/`; replace with WebP/AVIF stills |
-| Home lineup / about images | Placeholder | Lineup reuses the project SVGs; supply 3:4 portrait crops. About stills are placeholders |
-| Video | Draft | `showreel-poster.webp` exists; `showreel.mp4` is a draft and is not wired into the page |
+| Real business email | Confirm | `annchristine894@gmail.com` used throughout; confirm it is the final address |
+| Project images | Concept | WebP concept cards in `assets/images/projects/`; replace with real work as it is produced |
+| About images | Draft | WebP stills in place; replace with final RecBay photography when available |
+| Showreel | Draft | Wired into the homepage (15-second silent cut); needs a final 60–90 second cut, a compressed encode, and a dedicated poster |
 | Final brand identity | Not started | Logo, typography, and colors to be finalized |
 | Analytics | Not started | Add only with consent mechanism |
 | Domain, DNS, hosting | Not started | See deployment checklist (Section 21) |
@@ -414,6 +422,16 @@ Original text, structure, and concept visuals created for RecBay: © RecBay. All
 Fonts, photographs, video footage, music, and icons remain subject to their own licenses. Confirm commercial, web, and modification rights for every third-party asset before publishing. The starter `recbay-mark.svg` is a placeholder brand mark — replace it with a final owned or licensed logo.
 
 ## 23. Changelog
+
+### v1.11.0 — 2026-10-22
+
+- Typography unification: Archivo Black uppercase is now the single display voice site-wide — the service detail headings and project info headings joined it, and the About page's mixed-case editorial heading overrides were removed (the photo-hero belief line stays editorial as the one deliberate exception). Body prose sits at 16–17px in Helvetica Neue; Space Mono is limited to labels, eyebrows, metadata, and buttons.
+- Removed the non-clickable fanned project deck and all of its CSS; the Work page's filterable 01–05 grid now owns the portfolio, introduced by "Five projects, four disciplines." with a concept-work notice.
+- Homepage: the hero video frame is a link to the showreel section ("Watch the reel" badge), and the poster-first click-to-play showreel moved from Work to the homepage. Honest caption: "Showreel · 0:15 · Silent cut".
+- Dark mode: light-toned artwork is dimmed with `brightness(.78) contrast(1.05) saturate(.92)` plus a `rgba(16,16,16,.22)` scrim so stills sit calmly on dark surfaces.
+- Concrete copy pass: slogan headlines replaced with specifics site-wide (hero "Video, photo & motion.", "Six services. Production to delivery.", "Understand. Make. Refine.", per-page banners), descriptive `<title>`s on every page, new footer tagline "Video, photo & motion graphics.", and a response-time promise ("We reply within one business day") on the contact page and homepage banner — pending owner confirmation.
+- Accessibility: every page now has exactly one `<h1>` (promoted on About, Services, and Contact). Verified at 1366px and 390px in both themes: no horizontal overflow, no duplicate IDs, no broken assets or console errors; the hero anchor lands below the sticky header; filters, reel playback, and the theme toggle verified in-browser.
+- Housekeeping: deleted 47 tracked `qa-*` scratch files and the dead lineup/reel CSS; README and ASSET-SOURCING updated for the hero-video, showreel, and Web3Forms reality.
 
 ### v1.10.0 - 2026-10-22
 

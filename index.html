@@ -19,7 +19,7 @@
       if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
     }());
   </script>
-  <title>RecBay</title>
+  <title>RecBay — Film &amp; Video Production</title>
   <link rel="icon" href="assets/images/recbay-mark.svg" type="image/svg+xml">
   <link rel="preload" href="assets/images/home/hero-poster.webp" as="image">
   <link rel="preload" href="css/styles.css" as="style">
@@ -56,19 +56,50 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <p class="sticker">RecBay — 2026</p>
-            <h1 class="hero-title">Visuals made with intention.</h1>
+            <h1 class="hero-title">Video, photo &amp; motion.</h1>
           </div>
-          <div class="hero-video-frame">
+          <a class="hero-video-frame" href="#showreel">
             <video class="hero-video" poster="assets/images/home/hero-poster.webp" autoplay muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1">
               <source src="assets/videos/hero-16x9.webm" type="video/webm">
               <source src="assets/videos/hero-16x9.mp4" type="video/mp4">
             </video>
-          </div>
+            <p class="hero-video-badge">Watch the reel</p>
+          </a>
         </div>
         <div class="hero-bottom">
-          <p class="hero-intro">We shape ideas into moving images, photographs, and visual experiences.</p>
+          <p class="hero-intro">Direction, capture, edit, color, and delivery — one team, from brief to final master.</p>
           <a class="button button-lime" href="work.html">Explore the work</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="showreel" aria-labelledby="showreel-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Showreel</p>
+            <h2 id="showreel-title">The 15-second cut.</h2>
+          </div>
+          <p class="section-note">Silent, no commentary. Full brief, role, and deliverables on every project page.</p>
+        </div>
+        <figure class="reel" data-reel>
+          <div class="reel__poster" data-reel-poster>
+            <img src="assets/videos/showreel-poster.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+            <p class="reel__label">Showreel — 2026</p>
+            <p class="reel__status">Watch now</p>
+            <button class="reel__play" type="button" data-reel-play aria-label="Play the showreel">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="5,3 19,12 5,21" fill="currentColor"></polygon></svg>
+            </button>
+          </div>
+          <video class="reel__video" data-reel-video controls playsinline preload="none" poster="assets/videos/showreel-poster.webp" hidden>
+            <source src="assets/videos/showreel.webm" type="video/webm">
+            <source src="assets/videos/showreel.mp4" type="video/mp4">
+            Your browser does not support the video element.
+          </video>
+          <figcaption>
+            <span>Showreel · 0:15 · Silent cut</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -77,9 +108,9 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Selected work</p>
-            <h2>Ideas brought to life.</h2>
+            <h2>Five projects, start to finish.</h2>
           </div>
-          <p class="section-note">Films, photographs, and motion work — shaped from first frame to final cut.</p>
+          <p class="section-note">Self-initiated concepts across film, photography, color, and motion.</p>
         </div>
         <div class="project-grid">
           <a class="project-card project-card-large" href="project-product-film.html">
@@ -111,7 +142,7 @@
       <div class="container services-band-inner">
         <div>
           <p class="eyebrow">What we do</p>
-          <h2>From first frame to final cut.</h2>
+          <h2>Six services. Production to delivery.</h2>
         </div>
         <div class="service-list">
           <a href="services.html#visual-production"><span>01</span> Visual production</a>
@@ -128,10 +159,10 @@
       <div class="container process-layout">
         <div>
           <p class="eyebrow">Our approach</p>
-          <h2>Good work starts with a good question.</h2>
+          <h2>Understand. Make. Refine.</h2>
         </div>
         <div class="process-content">
-          <p class="large-copy">We bring curiosity to the brief, care to the details, and intention to every frame.</p>
+          <p class="large-copy">Every project runs through the same three steps.</p>
           <div class="process-steps">
             <div><span>01</span><h3>Understand</h3><p>We get clear on the idea, audience, and outcome before choosing the visuals.</p></div>
             <div><span>02</span><h3>Make</h3><p>We shape the concept through thoughtful production and considered craft.</p></div>
@@ -143,15 +174,15 @@
 
     <section class="contact-banner">
       <div class="container contact-banner-inner">
-        <p class="eyebrow">Have an idea?</p>
-        <h2>Let's make something worth watching.</h2>
+        <p class="eyebrow">New project?</p>
+        <h2>Send a brief. We reply within one business day.</h2>
         <a class="button button-lime" href="contact.html">Start a project</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-top"><a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a><p>Visuals made with intention.</p><a class="button button-solid" href="contact.html">Let's talk</a></div>
+    <div class="container footer-top"><a class="wordmark" href="index.html"><span class="brand-symbol">R<span>.</span></span><span>RECBAY</span></a><p>Video, photo &amp; motion graphics.</p><a class="button button-solid" href="contact.html">Let's talk</a></div>
     <div class="container footer-bottom"><span>© <span data-year></span> RecBay. All rights reserved.</span><span>Independent creative production</span><a href="mailto:annchristine894@gmail.com">annchristine894@gmail.com</a></div>
   </footer>
 </body>
