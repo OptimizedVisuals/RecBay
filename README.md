@@ -2,7 +2,7 @@
 
 **Version:** 1.11.0  
 **Last updated:** 2026-10-22  
-**Status:** Brutalist refinement pass - split hero with clickable showreel, filterable Work grid, single Archivo Black display voice, concrete copy
+**Status:** Apple-craft restyle pass (v1.12.0) — near-white surfaces, soft elevation, pill buttons, translucent nav, full-bleed home video hero, frosted About caption card; Archivo Black display, Space Mono metadata, desaturated lime accent
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ RecBay is a creative production team specializing in video editing, visual produ
 
 This website serves as RecBay's digital portfolio, presenting its creative identity, showcasing selected projects, explaining its services, and providing a point of contact for potential clients and collaborators.
 
-The website uses a cream, black, and lime neo-brutalist design system: 3px borders, hard offset shadows, zero radius, Archivo Black for all display headings, Helvetica Neue for body copy, and Space Mono for labels, eyebrows, metadata, and buttons. The homepage opens with a split hero — headline plus a clickable showreel link — followed by the 15-second showreel section; the Work page owns the full filterable project grid. The About page keeps a dark editorial interior as a deliberate contrast. A device-aware light/dark theme is available on every page, with the visitor's explicit choice stored locally.
+The website uses an Apple-craft premium design system on near-white `#fbfbfd`: system sans body copy at 17px, hairline borders at 6% opacity, soft low-opacity shadows, pill buttons and filter chips, rounded media cards (8/12/16/24px radii), 120–340ms ease-out/spring motion, and a strict 8pt spacing grid. Archivo Black remains the display voice (sentence case, balanced lines) and Space Mono remains reserved for labels, eyebrows, metadata, and small stats. The accent is a desaturated lime `#a8e63a`, used for state, focus rings, nav CTA, and one CTA row per page. The homepage opens with a full-bleed muted video hero with floating type; Work opens with a rounded hero image frame containing the softened scroll pull-back (1.08 → 1.0) plus pill filter chips; About keeps the full-bleed B&W hero with a frosted-glass caption card and a deliberately dark editorial interior. A device-aware light/dark theme is first-class on every page — every token has a dark equivalent — with the visitor's explicit choice stored locally.
 
 ## 2. Project objectives
 
@@ -65,7 +65,7 @@ The website is designed as a static front-end project and does not currently req
 
 | File | Purpose | Status |
 |---|---|---|
-| `index.html` | Homepage: split hero with a clickable showreel link, the 15-second showreel section, a selected-work grid, services, process, and a contact banner. | Exists |
+| `index.html` | Homepage: full-bleed muted video hero with floating type, the 15-second showreel section, a selected-work grid, services, process, and a contact banner. | Exists |
 | `work.html` | Portfolio gallery: "Five projects, four disciplines" intro, category filters (All/Film/Photography/Motion/Grade), concept labelling, and a concept-work notice. | Exists |
 | `project-product-film.html` | Static project detail page: Object of Desire (spec commercial concept). | Exists |
 | `project-editorial.html` | Static project detail page: In Their Element (editorial photography concept). | Exists |
@@ -164,17 +164,18 @@ These concepts should be replaced or supplemented with actual RecBay productions
 
 ## 7. Brand direction
 
-The visual identity is a cream/lime neo-brutalist system with a dark editorial interior on About.
+The visual identity is an Apple-craft premium system — a production studio that studied Apple, not an Apple product page — with a dark editorial interior on About.
 
 **Core principles:**
 
-- Cream `#f7f4ec` page surfaces, near-black `#101010` type and borders, white panels, and lime `#b8ff45` accents.
-- 3px black borders, hard offset shadows, zero radius; buttons move 2px on hover and 4px on active.
-- One display voice: Archivo Black, uppercase, on every heading — including the About section headings and the service and project detail headings. Body copy is Helvetica Neue at 16–17px; Space Mono is reserved for labels, eyebrows, metadata, and buttons.
-- Home opens with a split hero: the headline sits beside a clickable showreel video that jumps to the showreel section below it. The Work page owns the full filterable project grid (the old fanned deck was removed).
-- Light-toned artwork is dimmed with a CSS filter and a scrim in dark mode so it sits calmly on dark surfaces.
-- About is the only dark editorial section; the rest of the site follows the active light or dark theme. The About photo-hero belief line stays in the editorial text style as the one deliberate exception.
-- Clear calls to action and consistent presentation across desktop and mobile devices.
+- Near-white `#fbfbfd` surfaces (`#000000` in dark mode), near-black `#1d1d1f` (`#f5f5f7`) type, white elevated panels, sunken `#f5f5f7` wells, and a desaturated lime `#a8e63a` accent used only for state, focus, nav CTA, and one CTA row per page.
+- No hard borders and no offset shadows: 1px hairlines at 6% opacity, soft low-opacity elevation (`--shadow-sm/md/lg`), radii 8/12/16/24px, pills at 980px.
+- One display voice: Archivo Black, sentence case with balanced lines, on home/section/banner headings. Service and project detail headings step down to system sans semibold. Body copy is system sans at 17px; Space Mono is reserved for labels, eyebrows, metadata, and the number rails.
+- Motion is 120–340ms: ease-out fades, spring presses (`scale(0.97)`), interruptible, and fully static under `prefers-reduced-motion`.
+- Home opens with a full-bleed muted video hero — floating type over a gradient scrim, no frame or badge. Work opens with a rounded hero image frame whose image settles from `scale(1.08)` to `1.0` on scroll (reduced/data-saver static at 1.0) plus pill filter chips.
+- Dark mode is first-class: every token (colors, hairlines, shadows) has a dark equivalent, and light-toned artwork is dimmed with a CSS filter and a scrim so it reads as imagery.
+- About is the only always-dark editorial section: full-bleed B&W hero with a frosted-glass caption card; everything else follows the active light or dark theme.
+- Strict 8-point spacing; clear calls to action and consistent presentation across desktop and mobile devices.
 
 The current wordmark and visual styling serve as an initial brand direction. The final identity can be refined as RecBay establishes its preferred logo, typography, colors, and visual guidelines.
 
@@ -318,9 +319,10 @@ Submissions contain name, email, service interest, budget, timeline, and message
 ## 15. Performance requirements
 
 ### Implemented
-- **Lazy loading:** `loading="lazy"` + `decoding="async"` on below-the-fold images (project grid, showreel poster, About body); the homepage hero video uses `preload="metadata"` and its poster is preloaded with `fetchpriority="high"`.
-- **Image dimensions:** explicit `width`/`height` on every image to prevent layout shift.
-- **Resource hints:** `<link rel="preload">` for the homepage hero poster and `css/styles.css`.
+- **Lazy loading:** `loading="lazy"` + `decoding="async"` on below-the-fold images (project grid, showreel poster, About body); the homepage hero video uses `preload="metadata"` and its poster is preloaded with `fetchpriority="high"`; the Work hero image is `loading="eager"` + `fetchpriority="high"` (it is the LCP element there).
+- **Image dimensions:** explicit `width`/`height` on every image to prevent layout shift; the Work hero frame uses a fixed aspect ratio so the pull-back cannot shift layout.
+- **Resource hints:** `<link rel="preload">` for the homepage hero poster, the Work hero image, and `css/styles.css`.
+- **Simplified loading path:** the Work pull-back runs on a passive scroll listener rAF-throttled to one update per frame and clamps within [0,1]; no keyframes run on load anywhere (services map is static).
 - **Deferred JavaScript:** `js/main.js` loaded with `defer`; non-critical JS deferred.
 - **Video:** the homepage hero is a muted, inline looping video; the showreel section is poster-first with `preload="none"` and only requests video when the visitor presses play.
 - **Reduced motion:** `prefers-reduced-motion: reduce` disables animations/transitions.
@@ -373,11 +375,11 @@ Submissions contain name, email, service interest, budget, timeline, and message
 |---|---|---|
 | Site structure and pages | Done | Home, work, services, about, contact, plus 404 and privacy pages |
 | Static project detail pages | Done | Five static project pages |
-| Styles, layout, responsiveness | Done | Cream/lime brutalist system with mobile breakpoints and `prefers-reduced-motion` |
+| Styles, layout, responsiveness | Done | Apple-craft system (near-white surfaces, hairlines, soft elevation, pills, 8pt spacing) with mobile breakpoints and `prefers-reduced-motion` |
 | Navigation and skip link | Done | Mobile menu and keyboard-accessible navigation |
-| Home hero + showreel | Done | Split hero with clickable showreel link; 15-second silent showreel section below |
+| Home hero + showreel | Done | Full-bleed muted video hero with floating type and gradient scrim; poster-first 15-second silent showreel section below |
 | Work grid + filters | Done | Filterable 01–05 grid with concept labels and a concept-work notice |
-| Typography system | Done | Archivo Black display voice site-wide (About section headings and service/project headings included); body Helvetica 16–17px; Space Mono for labels |
+| Typography system | Done | Archivo Black display voice on home/section/banner headings (sentence case, balanced); service and project detail headings step down to system sans semibold; body system sans 17px; Space Mono for labels, metadata, number rails |
 | Concept labeling in UI | Done | "Concept" markers on Home and Work cards, notice on `work.html`, status facts on project pages |
 | Contact form UI and validation | Done | Honeypot, required consent, success/error states |
 | Contact form submission backend | Placeholder | Web3Forms wired; `YOUR_ACCESS_KEY` must be replaced and tested live |
@@ -422,6 +424,17 @@ Original text, structure, and concept visuals created for RecBay: © RecBay. All
 Fonts, photographs, video footage, music, and icons remain subject to their own licenses. Confirm commercial, web, and modification rights for every third-party asset before publishing. The starter `recbay-mark.svg` is a placeholder brand mark — replace it with a final owned or licensed logo.
 
 ## 23. Changelog
+
+### v1.12.0 — 2026-10-23 — Apple-craft restyle
+
+- Full restyle of the design system (`css/styles.css` rewritten): near-white `#fbfbfd` surfaces, `#1d1d1f` text, desaturated lime `#a8e63a` accent (only for state/focus/CTA), 1px hairlines at 6% opacity, soft elevation, radii 8/12/16/24 + pills, strict 8pt spacing, 120–340ms ease-out/spring motion. Every token has a dark equivalent (`#000000` ground). All 3px borders, hard offset shadows, rotated stickers, and hard-translate hovers removed.
+- Home: full-bleed muted video hero with floating type over a gradient scrim (frame link and rotated badge removed; the poster-first showreel section stays). Rotation-free thumbnail chips on the reel.
+- Work: new hero — mono rail ("Selected work" as the h1, services-style), rounded image frame with a softened scroll pull-back (1.08 → 1.0, rAF-throttled, reduced-motion/data-saver static), "05 projects" + "Concept work is labelled." stat, and pill filter chips. The old text page-hero retired.
+- Services: the six service nodes are soft-elevation cards that lift 2px on hover, with mono numbers; stage labels are plain mono text; the draw animation stays gone.
+- About: the caption is now a frosted-glass card (blur 24px, 10% border) floating bottom-left; entrance fades tightened to 340ms; belief stays system sans over the B&W hero.
+- Contact/privacy/404/projects inherit the new chrome: pill buttons, hairline-ringed rounded inputs with lime focus ring, rounded project facts/notice, and plain mono metadata labels replace the rotated "Project 0X" stickers.
+- Accessibility and parity verified: one h1 per page, no duplicate IDs, no broken assets or console errors, no horizontal overflow, filters/reel/theme-toggle interactives re-tested, and a full `prefers-reduced-motion` pass (hero video paused with poster visible, Work hero static at scale 1, About static).
+- Docs updated for the new system; the Work hero currently reuses the About studio still (`assets/images/about/about-body.webp`) until a dedicated `assets/images/work/work-hero.webp` shot is sourced.
 
 ### v1.11.0 — 2026-10-22
 

@@ -23,13 +23,13 @@ All five portfolio projects are currently **concept / self-initiated**. Use test
 
 ## Home page
 
-The homepage opens with a split hero: the headline beside a clickable showreel video (a link down to the showreel section, labelled "Watch the reel"), followed by the showreel itself, a selected-work grid, the services list, process, and the contact banner.
+The homepage opens with a full-bleed muted video hero — floating type over a gradient scrim, no frame or badge — followed by the showreel itself, a selected-work grid, the services list, process, and the contact banner.
 
 1. **`assets/images/home/hero-poster.webp`**
    Poster frame for the hero loop, shown until the video paints and preloaded on the homepage. 16:9, high quality — it is the LCP image.
 
 2. **`assets/videos/hero-16x9.mp4` + `.webm`**
-   The hero loop: muted, inline, looping, `preload="metadata"`. The current files are draft exports. For a final version, supply a silent loop that reads well small and behind the lime "Watch the reel" badge — motion, not fine detail. Alternate exports exist on disk (`hero-1x1.mp4`, `hero-9x16.mp4`, `hero-9x16.webm`, `hero-v2-9x16.webm`) but are not referenced by the site.
+   The hero loop: muted, inline, looping, `preload="metadata"`. The current files are draft exports. For a final version, supply a silent loop that reads well as a full-bleed background under white type — motion, not fine detail. Alternate exports exist on disk (`hero-1x1.mp4`, `hero-9x16.mp4`, `hero-9x16.webm`, `hero-v2-9x16.webm`) but are not referenced by the site.
 
 3. **`assets/videos/showreel-poster.webp`**
    Showreel poster inside `figure.reel`; the play button and the "Showreel — 2026" / "Watch now" labels are HTML overlays, so keep the frame free of baked-in text. It is currently byte-identical to `object-of-desire-card.webp` — replace it with a dedicated frame or a five-panel contact sheet once the final reel exists. Spec: 16:9, 1920x1080, WebP, under 250 KB.
@@ -48,7 +48,8 @@ The homepage opens with a split hero: the headline beside a clickable showreel v
 
 ## Work page
 
-1. **No hero image** — the Work page is text-led: a page hero ("Five projects, four disciplines."), category filters, then the grid. Nothing to source here; `assets/images/work/work-hero.webp` is not referenced.
+1. **`assets/images/about/about-body.webp`** *(stand-in for `assets/images/work/work-hero.webp`)*
+   The Work hero image sits in a rounded 2.2:1 frame with a softened scroll pull-back and a 35%→20% dark overlay. Until a dedicated shot is sourced, it reuses the About studio still (B&W hands-at-work over the laptop). A dedicated `assets/images/work/work-hero.webp` at 16:9 or wider is the eventual replacement — a set, crew, or lighting shot; wide crop safe (subject visible in a 2.2:1 window and a 4:3 mobile window).
 
 2. **`assets/images/projects/object-of-desire-card.webp`**
    **Shot:** the product-film master, cropped for the large 2.1:1 card.
@@ -172,7 +173,7 @@ Each project currently uses the generic RecBay mark as its share image. For laun
 
 - **Showreel:** MP4 + WebM, 1080p or 1440p, mixed audio, poster frame, captions, transcript.
 - Use `faststart` for MP4 and test playback on a phone.
-- **Home hero loop:** silent MP4 + WebM, 16:9, muted and inline with `preload="metadata"`. Motion that reads well small; keep the poster frame strong — it is the homepage's LCP image.
+- **Home hero loop:** silent MP4 + WebM, 16:9, muted and inline with `preload="metadata"`. Motion that reads well behind floating type (wide shapes, strong contrast); keep the poster frame strong — it is the homepage's LCP image.
 
 ### Social
 

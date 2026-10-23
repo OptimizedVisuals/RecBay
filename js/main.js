@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
       themeToggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     }
-    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#000000' : '#fbfbfd');
   };
 
   const applyTheme = (theme, persist = false) => {
@@ -112,8 +112,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const form = document.querySelector('#contact-form');
-  const status = document.querySelector('#form-hint') || document.querySelector('#form-status');
+  // Work hero — softened pull-back: the image settles from 1.08 to 1.0 inside
+  // the frame as the page scrolls, and the overlay lifts slightly with it.
+  const workHero = document.querySelector('.work-hero');
+  if (workHero) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = navigator.connection && navigator.connection.saveData;
+
+    if (prefersReducedMotion || saveData) {
+      workHero.classList.add('work-hero--static');
+    } else {
+      const img = workHero.querySelector('.work-hero__img');
+      const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+      let ticking = false;
+
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const h = workHero.offsetHeight;
+            const p = clamp(window.scrollY / (h * 0.9), 0, 1);
+            const scale = 1.08 - 0.08 * p;
+            if (img) img.style.transform = `scale(${scale})`;
+            workHero.style.setProperty('--overlay', String(0.35 - 0.15 * p));
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+  }
+
+  const form = document.querySelector('#contact-form');  const status = document.querySelector('#form-hint') || document.querySelector('#form-status');
   if (form) {
     const showStatus = (message, type = 'default') => {
       if (!status) return;

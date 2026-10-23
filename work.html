@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Explore RecBay's films, photography, motion design, and post-production work.">
-  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="theme-color" content="#fbfbfd" id="theme-color-meta">
   <meta name="color-scheme" content="light dark">
   <script>
     (function () {
@@ -16,7 +16,7 @@
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.style.colorScheme = theme;
       var meta = document.getElementById('theme-color-meta');
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#000000' : '#fbfbfd');
     }());
   </script>
   <title>Work — five projects, four disciplines | RecBay</title>
@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="assets/images/projects/object-of-desire-card.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/images/about/about-body.webp" as="image" fetchpriority="high">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -50,24 +50,34 @@
     </div>
   </header>
   <main id="main">
-    <section class="page-hero">
+    <section class="work-hero" id="work-hero">
       <div class="container">
-        <p><span class="sticker">2024&ndash;2026 / 05 projects</span></p>
-        <h1>Five projects, four disciplines.</h1>
-        <p class="page-intro">Self-initiated concept work across product film, portrait photography, short film, color, and motion design. Every project below was carried end&nbsp;to&nbsp;end &mdash; concept, shoot, edit, grade, and finish.</p>
+        <div class="work-hero__bar">
+          <h1 class="work-hero__label">Selected work</h1>
+          <span class="work-hero__date">2024—2026</span>
+        </div>
+        <div class="work-hero__frame">
+          <img class="work-hero__img" src="assets/images/about/about-body.webp" alt="At work in the RecBay studio" width="1408" height="768" loading="eager" decoding="async" fetchpriority="high">
+          <div class="work-hero__overlay"></div>
+        </div>
+        <div class="work-hero__meta">
+          <div class="work-hero__stat">
+            <p class="work-hero__count">05 projects</p>
+            <p class="work-hero__trust">Concept work is labelled.</p>
+          </div>
+          <div class="work-hero__filters" role="group" aria-label="Filter projects">
+            <button class="filter-button active" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" data-filter="film" aria-pressed="false">Film</button>
+            <button class="filter-button" data-filter="photo" aria-pressed="false">Photography</button>
+            <button class="filter-button" data-filter="motion" aria-pressed="false">Motion</button>
+            <button class="filter-button" data-filter="grade" aria-pressed="false">Grade</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-work" aria-labelledby="projects-title">
+    <section class="section section-work">
       <div class="container">
-        <h2 class="eyebrow" id="projects-title">All work</h2>
-        <div class="filter-row" role="group" aria-label="Filter projects">
-          <button class="filter-button active" data-filter="all" aria-pressed="true">All</button>
-          <button class="filter-button" data-filter="film" aria-pressed="false">Film</button>
-          <button class="filter-button" data-filter="photo" aria-pressed="false">Photography</button>
-          <button class="filter-button" data-filter="motion" aria-pressed="false">Motion</button>
-          <button class="filter-button" data-filter="grade" aria-pressed="false">Grade</button>
-        </div>
         <div class="project-grid work-grid">
           <a class="project-card" data-category="film" href="project-product-film.html">
             <div class="project-art art-product"><img src="assets/images/projects/object-of-desire-card.webp" alt="Object of Desire — product film still" class="project-image" loading="lazy" decoding="async" width="1920" height="1080"></div>

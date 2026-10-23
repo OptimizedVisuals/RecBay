@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Learn about RecBay's approach to visual production and post-production.">
-  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="theme-color" content="#fbfbfd" id="theme-color-meta">
   <meta name="color-scheme" content="light dark">
   <script>
     (function () {
@@ -16,7 +16,7 @@
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.style.colorScheme = theme;
       var meta = document.getElementById('theme-color-meta');
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#000000' : '#fbfbfd');
     }());
   </script>
   <title>About | RecBay — team and process</title>
@@ -64,7 +64,7 @@
           <div class="about-hero__hairline"></div>
           <p class="about-hero__belief">We build films frame by frame.</p>
           <p class="about-hero__fact">RecBay is a production team working across film, photography, and motion.</p>
-          <p class="about-hero__scroll">The team <span>↓</span></p>
+          <p class="about-hero__scroll">The team <span aria-hidden="true">↓</span></p>
         </div>
       </div>
     </section>

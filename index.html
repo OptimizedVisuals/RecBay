@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="RecBay is an independent creative production team working across visual production, editing, photography, color grading, motion graphics and VFX.">
-  <meta name="theme-color" content="#f7f4ec" id="theme-color-meta">
+  <meta name="theme-color" content="#fbfbfd" id="theme-color-meta">
   <meta name="color-scheme" content="light dark">
   <script>
     (function () {
@@ -16,7 +16,7 @@
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.style.colorScheme = theme;
       var meta = document.getElementById('theme-color-meta');
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#101010' : '#f7f4ec');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#000000' : '#fbfbfd');
     }());
   </script>
   <title>RecBay — Film &amp; Video Production</title>
@@ -51,21 +51,15 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="sticker">RecBay — 2026</p>
-            <h1 class="hero-title">Video, photo &amp; motion.</h1>
-          </div>
-          <a class="hero-video-frame" href="#showreel">
-            <video class="hero-video" poster="assets/images/home/hero-poster.webp" autoplay muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1">
-              <source src="assets/videos/hero-16x9.webm" type="video/webm">
-              <source src="assets/videos/hero-16x9.mp4" type="video/mp4">
-            </video>
-            <p class="hero-video-badge">Watch the reel</p>
-          </a>
-        </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <video class="hero-video" poster="assets/images/home/hero-poster.webp" autoplay muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1">
+        <source src="assets/videos/hero-16x9.webm" type="video/webm">
+        <source src="assets/videos/hero-16x9.mp4" type="video/mp4">
+      </video>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">Independent creative production</p>
+        <h1 class="hero-title" id="hero-title">Video, photo &amp; motion.</h1>
         <div class="hero-bottom">
           <p class="hero-intro">Direction, capture, edit, color, and delivery — one team, from brief to final master.</p>
           <a class="button button-lime" href="work.html">Explore the work</a>
