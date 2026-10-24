@@ -112,38 +112,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Work hero — softened pull-back: the image settles from 1.08 to 1.0 inside
-  // the frame as the page scrolls, and the overlay lifts slightly with it.
-  const workHero = document.querySelector('.work-hero');
-  if (workHero) {
+  // Pull-back heroes — the media settles from 1.08 to 1.0 as the page scrolls.
+  // On Work it also lifts the overlay slightly; project pages use the same motion.
+  document.querySelectorAll('.work-hero, .project-hero').forEach((hero) => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const saveData = navigator.connection && navigator.connection.saveData;
 
     if (prefersReducedMotion || saveData) {
-      workHero.classList.add('work-hero--static');
-    } else {
-      const img = workHero.querySelector('.work-hero__img');
-      const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
-      let ticking = false;
-
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            const h = workHero.offsetHeight;
-            const p = clamp(window.scrollY / (h * 0.9), 0, 1);
-            const scale = 1.08 - 0.08 * p;
-            if (img) img.style.transform = `scale(${scale})`;
-            workHero.style.setProperty('--overlay', String(0.35 - 0.15 * p));
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
+      hero.classList.add(hero.classList.contains('work-hero') ? 'work-hero--static' : 'project-hero--static');
+      return;
     }
-  }
+
+    const img = hero.querySelector('.work-hero__img, .project-hero__img');
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    let ticking = false;
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const h = hero.offsetHeight;
+          const p = clamp(window.scrollY / (h * 0.9), 0, 1);
+          const scale = 1.08 - 0.08 * p;
+          if (img) img.style.transform = `scale(${scale})`;
+          if (hero.classList.contains('work-hero')) {
+            hero.style.setProperty('--overlay', String(0.35 - 0.15 * p));
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  });
 
   const form = document.querySelector('#contact-form');  const status = document.querySelector('#form-hint') || document.querySelector('#form-status');
   if (form) {

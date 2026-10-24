@@ -121,7 +121,7 @@ No photos or videos are required. The only shared asset is the favicon/brand mar
 
 ## Project detail pages
 
-Each project page currently shows one lead still. The same master can also be used for the project cards.
+Each project page currently shows one lead still, and since v1.12.1 it sits as the full-bleed hero (`assets/images/projects/*-card.webp`) with the floating title over it — crop the subject so it survives a center crop at ~100vh and a 1.2:1 mobile crop. The same master can also be used for the project cards. The separate mid-page lead-shot slot (`*-detail.webp`) is now optional; if you produce a dedicated hero instead of reusing the card still, swap the `src` in the page's `.project-hero__media` (and its `preload` link).
 
 ### Object of Desire - `project-product-film.html`
 

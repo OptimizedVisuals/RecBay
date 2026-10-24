@@ -28,6 +28,7 @@
   <meta property="og:description" content="A RecBay post-production color grading study comparing source footage with a finished look.">
   <meta property="og:image" content="https://recbay.example/assets/images/recbay-mark.svg">
   <meta name="twitter:card" content="summary">
+  <link rel="preload" href="assets/images/projects/color-reconsidered-card.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,18 +57,19 @@
     </div>
   </header>
   <main id="main" class="project-page">
-    <section class="page-hero">
-      <div class="container">
+    <section class="project-hero" aria-labelledby="project-title">
+      <div class="project-hero__media">
+        <img class="project-hero__img" src="assets/images/projects/color-reconsidered-card.webp" alt="Color, Reconsidered — graded still" width="1408" height="768" loading="eager" decoding="async" fetchpriority="high">
+      </div>
+      <div class="project-hero__scrim" aria-hidden="true"></div>
+      <div class="container project-hero__inner">
         <p class="eyebrow">Project 04</p>
-        <h1>Color, Reconsidered.</h1>
-        <p class="page-intro">A post-production study of how color changes the feeling of a frame.</p>
+        <h1 class="project-hero__title" id="project-title">Color, Reconsidered.</h1>
+        <p class="project-hero__intro">A post-production study of how color changes the feeling of a frame.</p>
       </div>
     </section>
     <section class="section">
       <div class="container">
-        <div class="project-detail-art" id="project-art">
-          <div class="project-art art-grade"><img src="assets/images/projects/color-reconsidered-card.webp" alt="Color, Reconsidered — graded still" class="project-image" loading="lazy" decoding="async" width="1408" height="768"></div>
-        </div>
         <div class="project-info-grid">
           <div>
             <p class="eyebrow">The idea</p>

@@ -1,7 +1,7 @@
 # RecBay Production Portfolio Website
 
-**Version:** 1.11.0  
-**Last updated:** 2026-10-22  
+**Version:** 1.12.1  
+**Last updated:** 2026-10-24  
 **Status:** Apple-craft restyle pass (v1.12.0) — near-white surfaces, soft elevation, pill buttons, translucent nav, full-bleed home video hero, frosted About caption card; Archivo Black display, Space Mono metadata, desaturated lime accent
 
 ## Table of Contents
@@ -424,6 +424,13 @@ Original text, structure, and concept visuals created for RecBay: © RecBay. All
 Fonts, photographs, video footage, music, and icons remain subject to their own licenses. Confirm commercial, web, and modification rights for every third-party asset before publishing. The starter `recbay-mark.svg` is a placeholder brand mark — replace it with a final owned or licensed logo.
 
 ## 23. Changelog
+
+### v1.12.1 — 2026-10-24 — Unified project hero
+
+- Project pages (`project-*.html`): the text page-hero and the separate detail-art card merged into one cinematic hero — full-bleed media with a gradient scrim and floating type (mono "Project 0X" eyebrow, Archivo Black title in `#f5f5f7`, short intro), the same system as the Home/About heroes. The duplicated mid-page art card is retired.
+- The pull-back from Work now applies here too: the media settles 1.08 → 1.0 as the page scrolls (rAF-throttled, `project-hero--static` for reduced motion/data-saver).
+- Hero images are the LCP element: `loading="eager"`, `fetchpriority="high"`, and a per-page `<link rel="preload" as="image">`.
+- No structure/copy changes elsewhere; one h1 per page preserved (now `.project-hero__title`). Verified on all five pages × light/dark × 1366/390: no overflow, no broken assets, no console errors.
 
 ### v1.12.0 — 2026-10-23 — Apple-craft restyle
 

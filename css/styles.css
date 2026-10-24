@@ -98,8 +98,7 @@
 
 /* Dark mode: damp bright artwork so light stills read as images, not glowing slabs. */
 :root[data-theme="dark"] .project-art img,
-:root[data-theme="dark"] .reel__poster img,
-:root[data-theme="dark"] .project-detail-art img {
+:root[data-theme="dark"] .reel__poster img {
   filter: brightness(.82) contrast(1.04) saturate(.94);
 }
 :root[data-theme="dark"] .project-art::after,
@@ -113,8 +112,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .project-art img,
-  :root:not([data-theme]) .reel__poster img,
-  :root:not([data-theme]) .project-detail-art img {
+  :root:not([data-theme]) .reel__poster img {
     filter: brightness(.82) contrast(1.04) saturate(.94);
   }
   :root:not([data-theme]) .project-art::after,
@@ -1471,11 +1469,74 @@ summary:focus-visible {
 /* --------------------------------------------------------------------------
    Project detail pages
    -------------------------------------------------------------------------- */
-.project-detail-art { margin-bottom: var(--s-5); }
-.project-detail-art .project-art {
-  aspect-ratio: 2.1/1;
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-md);
+/* Cinematic project hero — full-bleed media with floating title (Home/About
+   system), softened pull-back 1.08 → 1.0 on scroll. Always dark-backed. */
+.project-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: calc(100svh - var(--nav-h));
+  padding: clamp(96px, 16vh, 160px) 0 clamp(48px, 8vh, 80px);
+  background: #0a0a0a;
+}
+.project-hero__media { position: absolute; inset: 0; }
+.project-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);
+  transform-origin: center;
+  will-change: transform;
+  display: block;
+}
+.project-hero__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(10, 10, 10, 0.5) 0%,
+    rgba(10, 10, 10, 0.12) 32%,
+    rgba(10, 10, 10, 0.38) 68%,
+    rgba(10, 10, 10, 0.86) 100%);
+}
+.project-hero__inner {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.project-hero__inner .eyebrow { color: rgba(245, 245, 247, 0.72); }
+.project-hero__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(44px, 7.5vw, 104px);
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  margin: 0;
+  color: #f5f5f7;
+  text-wrap: balance;
+  max-width: 14ch;
+}
+.project-hero__intro {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.6;
+  color: rgba(245, 245, 247, 0.78);
+  max-width: 52ch;
+  margin: var(--s-3) 0 0;
+}
+.project-hero--static .project-hero__img { transform: scale(1) !important; }
+
+@media (max-width: 560px) {
+  .project-hero { min-height: calc(86svh - var(--nav-h)); }
+  .project-hero__title { font-size: clamp(36px, 11vw, 62px); }
 }
 .project-info-grid {
   display: grid;
@@ -1605,8 +1666,7 @@ summary:focus-visible {
   .hero-intro { font-size: 15px; }
   .project-grid { grid-template-columns: 1fr; gap: var(--s-4); }
   .project-card-large { grid-column: auto; }
-  .project-card-large .project-art,
-  .project-detail-art .project-art { aspect-ratio: 1.2/1; }
+  .project-card-large .project-art { aspect-ratio: 1.2/1; }
   .project-art { aspect-ratio: 1.2/1; }
   .project-meta h3 { font-size: 16px; }
   .contact-banner h2 { font-size: clamp(36px, 11vw, 58px); }
@@ -1632,6 +1692,8 @@ summary:focus-visible {
     scroll-behavior: auto !important;
   }
   .about-hero--drift .about-hero__img { animation: none !important; }
+  .work-hero--static .work-hero__img,
+  .project-hero--static .project-hero__img { transform: scale(1) !important; }
   .project-card:hover .project-art,
   .project-card:hover .project-image,
   .services-hero__node:hover,
